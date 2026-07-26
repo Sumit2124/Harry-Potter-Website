@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A fan-made interactive journey through the wizarding world of Harry Potter." />
+  <title>The Wizarding Archive | Harry Potter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="overrides.css" />
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="site-header" id="home">
+    <a class="brand" href="#home" aria-label="The Wizarding Archive home">
+      <span class="brand-mark">✦</span>
+      <span><small>THE</small> WIZARDING<br />ARCHIVE</span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#story">The Story</a>
+      <a href="#films">The Films</a>
+      <a href="#wallpapers">Wallpapers</a>
+      <a href="#horcruxes">Horcruxes</a>
+      <a href="characters.html">Characters</a>
+      <a href="magic.html">Play</a>
+    </nav>
+    <a class="nav-cta" href="#about">About the archive <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> An unofficial fan archive</p>
+        <h1>Where magic<br /><em>becomes</em> memory.</h1>
+        <p class="hero-intro">Step into a living archive of friendship, courage, and the stories that made a generation believe in something more.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#story">Begin the journey <span>→</span></a>
+          <a class="text-link" href="#films">Explore the films <span>↘</span></a>
+        </div>
+      </div>
+      <div class="hero-art reveal delay-1" aria-label="Illustration of a magical castle at night">
+        <div class="moon"></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="castle"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+        <div class="mountains"></div><div class="mist mist-one"></div><div class="mist mist-two"></div>
+        <p class="art-caption">the castle<br /><strong>awaits</strong></p>
+        <span class="sparkle s1">✦</span><span class="sparkle s2">✧</span><span class="sparkle s3">✦</span>
+      </div>
+      <div class="scroll-cue"><span></span> Scroll to explore</div>
+    </section>
+
+    <section class="intro section-shell" id="story">
+      <div class="section-heading reveal"><p class="eyebrow"><span></span> Chapter one</p><h2>A story about<br /><em>the light within us.</em></h2></div>
+      <div class="intro-text reveal delay-1"><p>Harry Potter is more than a story about a boy who lived. It is a journey through wonder and loss, a reminder that our choices define us far more than our origins ever could.</p><p class="muted">This little corner of the internet is made for revisiting the moments, characters, and ideas that still feel like home.</p><a class="text-link" href="#films">Read the story synopsis <span>↗</span></a></div>
+    </section>
+
+    <section class="storyline section-shell">
+      <div class="section-kicker"><span>01</span><span class="line"></span><span>THE PLOT</span></div>
+      <div class="story-grid">
+        <div class="story-quote reveal"><span class="quote-mark">“</span><p>It is our choices, Harry, that show what we truly are, far more than our abilities.</p><small>— Albus Dumbledore</small></div>
+        <div class="story-body reveal delay-1"><p>On his eleventh birthday, Harry learns he is a wizard and enters a world hidden in plain sight. At Hogwarts, he finds friendship in Ron and Hermione, discovers a talent for magic, and learns the truth about the dark wizard who tried to destroy him as a baby.</p><p>Across seven years, the trio grows from curious children into courageous young wizards. Together they face secrets, prophecies, sacrifice, and a war that asks every person to choose what they stand for.</p><div class="story-stat"><strong>7</strong><span>years of<br />magic</span><strong>1</strong><span>boy who<br />changed it all</span></div></div>
+      </div>
+    </section>
+
+    <section class="films section-shell" id="films">
+      <div class="section-kicker"><span>02</span><span class="line"></span><span>THE FILMS</span></div>
+      <div class="section-heading split-heading reveal"><div><p class="eyebrow"><span></span> The complete collection</p><h2>Eight chapters.<br /><em>One legend.</em></h2></div><p class="heading-note">Select a chapter to uncover its release, story, and place in the wizarding archive.</p></div>
+      <div class="film-layout">
+        <div class="film-list" role="tablist" aria-label="Harry Potter films">
+          <a class="film-tab active" href="book-1.html"><span>01</span> The Philosopher's Stone <b>↗</b></a>
+          <a class="film-tab" href="book-2.html"><span>02</span> The Chamber of Secrets <b>↗</b></a>
+          <a class="film-tab" href="book-3.html"><span>03</span> The Prisoner of Azkaban <b>↗</b></a>
+          <a class="film-tab" href="book-4.html"><span>04</span> The Goblet of Fire <b>↗</b></a>
+          <a class="film-tab" href="book-5.html"><span>05</span> The Order of the Phoenix <b>↗</b></a>
+          <a class="film-tab" href="book-6.html"><span>06</span> The Half-Blood Prince <b>↗</b></a>
+          <a class="film-tab" href="book-7.html"><span>07</span> The Deathly Hallows I <b>↗</b></a>
+          <a class="film-tab" href="book-8.html"><span>08</span> The Deathly Hallows II <b>↗</b></a>
+        </div>
+        <article class="film-detail reveal delay-1" id="film-detail" aria-live="polite">
+          <div class="film-number">01 / 08</div><p class="film-year">2001 · Chris Columbus</p><h3>Harry Potter and the<br /><em>Philosopher's Stone</em></h3><p class="film-summary">An ordinary boy discovers on his eleventh birthday that he is a wizard. At Hogwarts School of Witchcraft and Wizardry, Harry finds a home, two loyal friends, and a mystery that leads him face-to-face with his past.</p><div class="film-tags"><span>Wonder</span><span>First year</span><span>The beginning</span></div><div class="detail-footer"><span>“The magic begins.”</span><span class="film-dot">✦</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wallpapers section-shell" id="wallpapers">
+      <div class="section-kicker"><span>03</span><span class="line"></span><span>THE GALLERY</span></div>
+      <div class="section-heading split-heading reveal"><div><p class="eyebrow"><span></span> Moving pictures</p><h2>Scenes worth<br /><em>remembering.</em></h2></div><p class="heading-note">A collection of atmospheric moments, imagined in midnight blue and candlelight gold.</p></div>
+      <div class="gallery-grid reveal delay-1">
+        <button class="gallery-card gallery-castle" data-title="The castle awaits"><span class="gallery-icon">✦</span><span class="gallery-label">The castle awaits <small>01 / 04</small></span></button>
+        <button class="gallery-card gallery-forest" data-title="Into the Forbidden Forest"><span class="gallery-icon">✧</span><span class="gallery-label">Into the forbidden forest <small>02 / 04</small></span></button>
+        <button class="gallery-card gallery-map" data-title="Mischief managed"><span class="gallery-icon">⌁</span><span class="gallery-label">Mischief managed <small>03 / 04</small></span></button>
+        <button class="gallery-card gallery-hall" data-title="The Great Hall"><span class="gallery-icon">✦</span><span class="gallery-label">The great hall <small>04 / 04</small></span></button>
+      </div>
+    </section>
+
+    <section class="horcruxes section-shell" id="horcruxes">
+      <div class="section-kicker"><span>04</span><span class="line"></span><span>THE DARK ARTS</span></div>
+      <div class="horcrux-intro reveal"><p class="eyebrow"><span></span> A lesson in immortality</p><h2>Seven pieces of a soul.<br /><em>One impossible obsession.</em></h2><p>Tom Riddle believed death was the ultimate weakness. By splitting his soul into Horcruxes, he anchored himself to life—but every fragment made him less human.</p></div>
+      <div class="horcrux-list">
+        <div class="horcrux-card reveal"><span>01</span><div class="relic-icon diary">▤</div><div><h3>Tom Riddle's Diary</h3><p>Destroyed by a basilisk fang in the Chamber of Secrets.</p></div><b>†</b></div>
+        <div class="horcrux-card reveal delay-1"><span>02</span><div class="relic-icon ring">◇</div><div><h3>Marvolo Gaunt's Ring</h3><p>Destroyed by the Sword of Gryffindor.</p></div><b>†</b></div>
+        <div class="horcrux-card reveal delay-2"><span>03</span><div class="relic-icon locket">◉</div><div><h3>Slytherin's Locket</h3><p>Destroyed by Ron Weasley in the Forest of Dean.</p></div><b>†</b></div>
+        <div class="horcrux-card reveal"><span>04</span><div class="relic-icon cup">∪</div><div><h3>Hufflepuff's Cup</h3><p>Destroyed with a basilisk fang in the Chamber.</p></div><b>†</b></div>
+        <div class="horcrux-card reveal delay-1"><span>05</span><div class="relic-icon diadem">♢</div><div><h3>Ravenclaw's Diadem</h3><p>Consumed by Fiendfyre in the Room of Requirement.</p></div><b>†</b></div>
+        <div class="horcrux-card reveal delay-2"><span>06</span><div class="relic-icon snake">≈</div><div><h3>Nagini</h3><p>Destroyed by Neville Longbottom during the final battle.</p></div><b>†</b></div>
+        <div class="horcrux-card featured reveal"><span>07</span><div class="relic-icon scar">⚡</div><div><h3>Harry Potter</h3><p>The accidental Horcrux. Love, once again, made the impossible possible.</p></div><b>†</b></div>
+      </div>
+    </section>
+
+    <section class="about section-shell" id="about"><div class="about-card reveal"><div><p class="eyebrow"><span></span> About this archive</p><h2>Made with a little<br /><em>magic and code.</em></h2></div><div class="about-copy"><p>This is a fan-made project created to celebrate the world, characters, and lessons of Harry Potter. It is a quiet place to return to whenever you need a little more wonder.</p><div class="contact-line"><span>Created by</span><strong>Sumit Thapliyal</strong></div><div class="contact-line"><span>Find me on GitHub</span><a href="https://github.com/Sumit2124" target="_blank" rel="noreferrer">@Sumit2124 ↗</a></div></div></div></section>
+  </main>
+
+  <footer class="site-footer section-shell"><span>✦ The Wizarding Archive</span><span>Made for the magic we carry with us.</span><span>© 2026 · Unofficial fan project</span></footer>
+  <div class="lightbox" aria-hidden="true"><button class="lightbox-close" aria-label="Close gallery">×</button><div class="lightbox-content"><span class="lightbox-symbol">✦</span><p>THE WIZARDING ARCHIVE</p><h2></h2><small>Click anywhere outside to return to the gallery</small></div></div>
+  <script src="script.js"></script>
+  <script src="router.js"></script>
+  <script src="main-books.js"></script>
+  <script src="magic-ui.js"></script>
+  <script src="horcrux-links.js"></script>
+</body>
+</html>

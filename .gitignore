@@ -1,0 +1,25 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# JavaScript tooling and generated output
+node_modules/
+dist/
+coverage/
+*.log
+npm-debug.log*
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Temporary files
+tmp/
+temp/

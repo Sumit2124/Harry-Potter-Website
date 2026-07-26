@@ -1,0 +1,1 @@
+.horcrux-card-link{position:absolute;inset:0;z-index:4}.horcrux-card>*:not(.horcrux-card-link){position:relative;z-index:5;pointer-events:none}.horcrux-card{cursor:pointer}
