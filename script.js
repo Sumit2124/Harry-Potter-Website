@@ -25,7 +25,10 @@ document.querySelector('.lightbox-close').addEventListener('click',closeLightbox
 
 const menuToggle = document.querySelector('.menu-toggle'); const nav = document.querySelector('.main-nav');
 menuToggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',open)});
-document.querySelectorAll('.main-nav a').forEach(link=>link.addEventListener('click',()=>nav.classList.remove('open')));
+const closeMenu=()=>{nav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false')};
+document.querySelectorAll('.main-nav a').forEach(link=>link.addEventListener('click',closeMenu));
+document.addEventListener('pointerdown',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()});
+window.addEventListener('resize',()=>{if(window.innerWidth>800)closeMenu()});
 
 const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.12}); document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.addEventListener('mousemove',e=>{const glow=document.querySelector('.cursor-glow');glow.style.left=`${e.clientX}px`;glow.style.top=`${e.clientY}px`});

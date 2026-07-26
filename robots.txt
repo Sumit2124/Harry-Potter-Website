@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wizarding-archive-sumit.netlify.app/sitemap.xml
