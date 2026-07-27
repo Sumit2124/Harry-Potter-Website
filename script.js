@@ -27,7 +27,11 @@ const menuToggle = document.querySelector('.menu-toggle'); const nav = document.
 menuToggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',open)});
 const closeMenu=()=>{nav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false')};
 document.querySelectorAll('.main-nav a').forEach(link=>link.addEventListener('click',closeMenu));
-document.addEventListener('pointerdown',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()});
+document.addEventListener('pointerdown',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()},true);
+document.addEventListener('click',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()},true);
+document.addEventListener('touchstart',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()},true);
+document.addEventListener('focusin',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()},true);
+window.addEventListener('scroll',closeMenu,{passive:true});
 window.addEventListener('resize',()=>{if(window.innerWidth>800)closeMenu()});
 
 const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.12}); document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));

@@ -15,11 +15,13 @@
 .guide-item h2{font:600 clamp(34px,4vw,48px)/1.1 var(--serif);letter-spacing:-.045em;margin:0 0 13px}
 .guide-item p{max-width:900px;color:var(--muted);font-size:15px;line-height:1.85;margin:0}
 .guide-item small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:10px;margin-bottom:13px}
+.guide-back{display:inline-flex;align-items:center;gap:10px;margin-top:42px;color:var(--gold-bright);font:600 11px var(--sans);letter-spacing:.12em;text-decoration:none;text-transform:uppercase;transition:color .25s,transform .25s}.guide-back:hover{color:var(--cream);transform:translateX(-4px)}
 
 @media(max-width:650px){
-  .site-header{padding:0 6vw}
-  .site-header nav{gap:13px}
-  .site-header nav a{font-size:9px;letter-spacing:.04em}
+  .site-header{height:auto;min-height:72px;padding:17px 6vw;align-items:flex-start;gap:16px;flex-direction:column}
+  .site-header .brand{max-width:100%;font-size:13px;line-height:1.15}
+  .site-header nav{width:100%;gap:0;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
+  .site-header nav a{font-size:10px;letter-spacing:.08em;white-space:nowrap}
   .guide-page{width:min(92vw,1120px);padding:62px 0 76px}
   .guide-page>h1{font-size:clamp(43px,14vw,61px)}
   .guide-intro{font-size:16px}
