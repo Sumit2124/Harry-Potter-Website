@@ -27,14 +27,17 @@
   const share = async (text, button) => {
     const url = location.href;
     const message = `${text}\n\nExplore The Wizarding Archive: ${url}`;
-    try {
-      if (navigator.share) {
+    const canUseNativeShare = typeof navigator.share === 'function'
+      && window.isSecureContext
+      && /^https?:$/.test(location.protocol);
+    if (canUseNativeShare) {
+      try {
         await navigator.share({ title: 'The Wizarding Archive', text, url });
         setButtonState(button, 'Shared ✦');
         return true;
+      } catch (error) {
+        if (error && error.name === 'AbortError') return false;
       }
-    } catch (error) {
-      if (error && error.name === 'AbortError') return false;
     }
     const copied = await copyText(message);
     if (copied) {
