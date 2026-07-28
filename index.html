@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A fan-made interactive journey through the wizarding world of Harry Potter." />
+  <meta name="description" content="The Wizarding Archive is a Harry Potter fan archive with story guides, movie order, Horcrux explanations, character profiles, wallpapers, quizzes, spells, and weekly reasons to return." />
+  <meta name="theme-color" content="#080b17" />
+  <meta property="og:title" content="The Wizarding Archive | Harry Potter Fan Archive" />
+  <meta property="og:description" content="Explore Harry Potter stories, characters, Horcruxes, spells, wallpapers, quizzes, and weekly magical challenges." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wizarding-archive-sumit.netlify.app/" />
+  <meta name="twitter:card" content="summary" />
   <meta name="google-site-verification" content="qjCIiViIxVGbB8GV6f3VrQEfzcEbsuLypyEmRlaexQU" />
   <title>The Wizarding Archive | Harry Potter</title>
   <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="overrides.css" />
-  <link rel="stylesheet" href="seo-guides.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/overrides.css" />
+  <link rel="stylesheet" href="css/seo-guides.css" />
 </head>
 <body>
   <div class="cursor-glow" aria-hidden="true"></div>
@@ -30,9 +36,10 @@
       <a href="#films">The Films</a>
       <a href="#wallpapers">Wallpapers</a>
       <a href="#horcruxes">Horcruxes</a>
-      <a href="characters.html">Characters</a>
+      <a href="ui/characters.html">Characters</a>
+      <a href="ui/family-tree.html">Family Tree</a>
       <a href="#guides">Guides</a>
-      <a href="magic.html">Play</a>
+      <a href="ui/magic.html">Play</a>
     </nav>
     <a class="nav-cta" href="#about">About the archive <span>↗</span></a>
   </header>
@@ -77,14 +84,14 @@
       <div class="section-heading split-heading reveal"><div><p class="eyebrow"><span></span> The complete collection</p><h2>Eight chapters.<br /><em>One legend.</em></h2></div><p class="heading-note">Select a chapter to uncover its release, story, and place in the wizarding archive.</p></div>
       <div class="film-layout">
         <div class="film-list" role="tablist" aria-label="Harry Potter films">
-          <a class="film-tab active" href="book-1.html"><span>01</span> The Philosopher's Stone <b>↗</b></a>
-          <a class="film-tab" href="book-2.html"><span>02</span> The Chamber of Secrets <b>↗</b></a>
-          <a class="film-tab" href="book-3.html"><span>03</span> The Prisoner of Azkaban <b>↗</b></a>
-          <a class="film-tab" href="book-4.html"><span>04</span> The Goblet of Fire <b>↗</b></a>
-          <a class="film-tab" href="book-5.html"><span>05</span> The Order of the Phoenix <b>↗</b></a>
-          <a class="film-tab" href="book-6.html"><span>06</span> The Half-Blood Prince <b>↗</b></a>
-          <a class="film-tab" href="book-7.html"><span>07</span> The Deathly Hallows I <b>↗</b></a>
-          <a class="film-tab" href="book-8.html"><span>08</span> The Deathly Hallows II <b>↗</b></a>
+          <a class="film-tab active" href="ui/book.html?bookId=1"><span>01</span> The Philosopher's Stone <b>↗</b></a>
+          <a class="film-tab" href="ui/book.html?bookId=2"><span>02</span> The Chamber of Secrets <b>↗</b></a>
+          <a class="film-tab" href="ui/book.html?bookId=3"><span>03</span> The Prisoner of Azkaban <b>↗</b></a>
+          <a class="film-tab" href="ui/book.html?bookId=4"><span>04</span> The Goblet of Fire <b>↗</b></a>
+          <a class="film-tab" href="ui/book.html?bookId=5"><span>05</span> The Order of the Phoenix <b>↗</b></a>
+          <a class="film-tab" href="ui/book.html?bookId=6"><span>06</span> The Half-Blood Prince <b>↗</b></a>
+          <a class="film-tab" href="ui/book.html?bookId=7"><span>07</span> The Deathly Hallows I <b>↗</b></a>
+          <a class="film-tab" href="ui/book.html?bookId=8"><span>08</span> The Deathly Hallows II <b>↗</b></a>
         </div>
         <article class="film-detail reveal delay-1" id="film-detail" aria-live="polite">
           <div class="film-number">01 / 08</div><p class="film-year">2001 · Chris Columbus</p><h3>Harry Potter and the<br /><em>Philosopher's Stone</em></h3><p class="film-summary">An ordinary boy discovers on his eleventh birthday that he is a wizard. At Hogwarts School of Witchcraft and Wizardry, Harry finds a home, two loyal friends, and a mystery that leads him face-to-face with his past.</p><div class="film-tags"><span>Wonder</span><span>First year</span><span>The beginning</span></div><div class="detail-footer"><span>“The magic begins.”</span><span class="film-dot">✦</span></div>
@@ -121,26 +128,38 @@
       <div class="section-kicker"><span>05</span><span class="line"></span><span>EXPLORE THE ARCHIVE</span></div>
       <div class="section-heading split-heading reveal"><div><p class="eyebrow"><span></span> Wizarding world guides</p><h2>Answers for every<br /><em>curious witch and wizard.</em></h2></div><p class="heading-note">Focused guides to the mysteries, characters, films, and spells behind the story.</p></div>
       <div class="guide-links reveal delay-1">
-        <a href="harry-potter-horcruxes-explained.html"><span>01</span><strong>Harry Potter Horcruxes Explained</strong><b>↗</b></a>
-        <a href="harry-potter-character-guide.html"><span>02</span><strong>Harry Potter Character Guide</strong><b>↗</b></a>
-        <a href="harry-potter-movie-order.html"><span>03</span><strong>Harry Potter Movie Order</strong><b>↗</b></a>
-        <a href="harry-potter-spells-explained.html"><span>04</span><strong>Every Harry Potter Spell Explained</strong><b>↗</b></a>
-        <a href="harry-potter-hogwarts-houses-explained.html"><span>05</span><strong>Hogwarts Houses Explained</strong><b>↗</b></a>
-        <a href="harry-potter-deathly-hallows-explained.html"><span>06</span><strong>Harry Potter Deathly Hallows Explained</strong><b>↗</b></a>
-        <a href="harry-potter-spells-and-meanings.html"><span>07</span><strong>Harry Potter Spells and Meanings</strong><b>↗</b></a>
-        <a href="harry-potter-timeline.html"><span>08</span><strong>Harry Potter Timeline Explained</strong><b>↗</b></a>
+        <a href="ui/harry-potter-horcruxes-explained.html"><span>01</span><strong>Harry Potter Horcruxes Explained</strong><b>↗</b></a>
+        <a href="ui/harry-potter-character-guide.html"><span>02</span><strong>Harry Potter Character Guide</strong><b>↗</b></a>
+        <a href="ui/harry-potter-movie-order.html"><span>03</span><strong>Harry Potter Movie Order</strong><b>↗</b></a>
+        <a href="ui/harry-potter-spells-explained.html"><span>04</span><strong>Every Harry Potter Spell Explained</strong><b>↗</b></a>
+        <a href="ui/harry-potter-hogwarts-houses-explained.html"><span>05</span><strong>Hogwarts Houses Explained</strong><b>↗</b></a>
+        <a href="ui/harry-potter-deathly-hallows-explained.html"><span>06</span><strong>Harry Potter Deathly Hallows Explained</strong><b>↗</b></a>
+        <a href="ui/harry-potter-spells-and-meanings.html"><span>07</span><strong>Harry Potter Spells and Meanings</strong><b>↗</b></a>
+        <a href="ui/harry-potter-timeline.html"><span>08</span><strong>Harry Potter Timeline Explained</strong><b>↗</b></a>
+        <a href="ui/harry-potter-books-in-order.html"><span>09</span><strong>Harry Potter Books in Order</strong><b>↗</b></a>
+        <a href="ui/harry-potter-wands-explained.html"><span>10</span><strong>Harry Potter Wands Explained</strong><b>↗</b></a>
+        <a href="ui/harry-potter-patronus-list.html"><span>11</span><strong>Harry Potter Patronus List</strong><b>↗</b></a>
+        <a href="ui/harry-potter-ending-explained.html"><span>12</span><strong>Harry Potter Ending Explained</strong><b>↗</b></a>
+        <a href="ui/family-tree.html"><span>13</span><strong>Harry Potter Family Tree</strong><b>↗</b></a>
       </div>
     </section>
 
-    <section class="about section-shell" id="about"><div class="about-card reveal"><div><p class="eyebrow"><span></span> About this archive</p><h2>Made with a little<br /><em>magic and code.</em></h2></div><div class="about-copy"><p>This is a fan-made project created to celebrate the world, characters, and lessons of Harry Potter. It is a quiet place to return to whenever you need a little more wonder.</p><div class="contact-line"><span>Created by</span><strong>Sumit Thapliyal</strong></div><div class="contact-line"><span>Find me on GitHub</span><a href="https://github.com/Sumit2124" target="_blank" rel="noreferrer">@Sumit2124 ↗</a></div></div></div></section>
+    <section class="weekly-ritual section-shell" id="weekly-ritual">
+      <div class="section-kicker"><span>06</span><span class="line"></span><span>THE ARCHIVE RETURNS</span></div>
+      <div class="weekly-ritual-card reveal"><div><p class="eyebrow"><span></span> A living archive</p><h2 id="ritual-title">A reason to return<br /><em>every week.</em></h2><p id="ritual-copy">Every week brings a new character focus, a hidden spell prompt, and a Friday wallpaper reveal.</p><div class="ritual-note"><span>Hidden prompt</span><strong id="ritual-spell">A new magical clue appears here.</strong></div></div><div class="ritual-actions"><p id="weekly-date">New wallpaper every Friday</p><a class="button button-primary" id="ritual-action" href="ui/magic.html">Open this week’s magic <span>→</span></a><button class="button button-ghost" type="button" data-share="Visit The Wizarding Archive for this week’s character focus and magical challenge.">Share this week <span>↗</span></button></div></div>
+    </section>
+
+    <section class="about section-shell" id="about"><div class="about-card reveal"><div><p class="eyebrow"><span></span> About this archive</p><h2>Made with a little<br /><em>magic and code.</em></h2></div><div class="about-copy"><p>This is a fan-made project created to celebrate the world, characters, and lessons of Harry Potter. It is a quiet place to return to whenever you need a little more wonder.</p><div class="contact-line"><span>Created by</span><strong>Sumit Thapliyal</strong></div><div class="contact-line"><span>Find me on GitHub</span><a href="https://github.com/Sumit2124" target="_blank" rel="noreferrer">@Sumit2124 ↗</a></div><button class="button button-ghost about-share" type="button" data-share="Explore The Wizarding Archive, a fan-made Harry Potter archive of stories, characters, guides, and magical challenges.">Share the archive <span>↗</span></button></div></div></section>
   </main>
 
   <footer class="site-footer section-shell"><span>✦ The Wizarding Archive</span><span>Made for the magic we carry with us.</span><span>© 2026 · Unofficial fan project</span></footer>
   <div class="lightbox" aria-hidden="true"><button class="lightbox-close" aria-label="Close gallery">×</button><div class="lightbox-content"><span class="lightbox-symbol">✦</span><p>THE WIZARDING ARCHIVE</p><h2></h2><small>Click anywhere outside to return to the gallery</small></div></div>
-  <script src="script.js"></script>
-  <script src="router.js"></script>
-  <script src="main-books.js"></script>
-  <script src="magic-ui.js"></script>
-  <script src="horcrux-links.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main-books.js"></script>
+  <script src="js/magic-ui.js"></script>
+  <script src="js/horcrux-links.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/archive-features.js"></script>
 </body>
 </html>

@@ -1,0 +1,89 @@
+[build]
+  publish = "."
+
+# Keep the deployed public URLs stable while the source HTML lives in ui/.
+# Query strings such as ?bookId=2 and ?horcruxId=1 are preserved automatically.
+[[redirects]]
+  from = "/book.html"
+  to = "/ui/book.html"
+  status = 200
+
+[[redirects]]
+  from = "/character.html"
+  to = "/ui/character.html"
+  status = 200
+
+[[redirects]]
+  from = "/characters.html"
+  to = "/ui/characters.html"
+  status = 200
+
+[[redirects]]
+  from = "/horcrux.html"
+  to = "/ui/horcrux.html"
+  status = 200
+
+[[redirects]]
+  from = "/magic.html"
+  to = "/ui/magic.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-books-in-order.html"
+  to = "/ui/harry-potter-books-in-order.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-character-guide.html"
+  to = "/ui/harry-potter-character-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-deathly-hallows-explained.html"
+  to = "/ui/harry-potter-deathly-hallows-explained.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-ending-explained.html"
+  to = "/ui/harry-potter-ending-explained.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-hogwarts-houses-explained.html"
+  to = "/ui/harry-potter-hogwarts-houses-explained.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-horcruxes-explained.html"
+  to = "/ui/harry-potter-horcruxes-explained.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-movie-order.html"
+  to = "/ui/harry-potter-movie-order.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-patronus-list.html"
+  to = "/ui/harry-potter-patronus-list.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-spells-and-meanings.html"
+  to = "/ui/harry-potter-spells-and-meanings.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-spells-explained.html"
+  to = "/ui/harry-potter-spells-explained.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-timeline.html"
+  to = "/ui/harry-potter-timeline.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-wands-explained.html"
+  to = "/ui/harry-potter-wands-explained.html"
+  status = 200

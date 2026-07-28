@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://wizarding-archive-sumit.netlify.app/</loc></url>
+  <url><loc>https://wizarding-archive-sumit.netlify.app/characters.html</loc></url>
+  <url><loc>https://wizarding-archive-sumit.netlify.app/magic.html</loc></url>
   <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-horcruxes-explained.html</loc></url>
   <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-character-guide.html</loc></url>
   <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-movie-order.html</loc></url>
@@ -9,4 +11,9 @@
   <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-deathly-hallows-explained.html</loc></url>
   <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-spells-and-meanings.html</loc></url>
   <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-timeline.html</loc></url>
+  <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-books-in-order.html</loc></url>
+  <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-wands-explained.html</loc></url>
+  <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-patronus-list.html</loc></url>
+  <url><loc>https://wizarding-archive-sumit.netlify.app/harry-potter-ending-explained.html</loc></url>
+  <url><loc>https://wizarding-archive-sumit.netlify.app/ui/family-tree.html</loc></url>
 </urlset>

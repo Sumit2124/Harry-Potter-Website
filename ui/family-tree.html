@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="../" />
+  <meta name="description" content="Explore a magical Harry Potter family tree connecting the Potter, Weasley, Black, Gaunt, and Riddle families, plus the chosen family at the heart of the story." />
+  <meta name="theme-color" content="#080b17" />
+  <meta property="og:title" content="Harry Potter Family Tree | The Wizarding Archive" />
+  <meta property="og:description" content="Trace the family lines and chosen-family connections that shape the Harry Potter story." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://wizarding-archive-sumit.netlify.app/ui/family-tree.html" />
+  <meta name="twitter:card" content="summary" />
+  <title>Harry Potter Family Tree | The Wizarding Archive</title>
+  <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/ui/family-tree.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/overrides.css" />
+  <link rel="stylesheet" href="css/wand.css" />
+  <link rel="stylesheet" href="css/family-tree.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Harry Potter Family Tree",
+    "description": "A simplified family tree connecting the Potter, Weasley, Black, Gaunt, and Riddle families in the Harry Potter story.",
+    "url": "https://wizarding-archive-sumit.netlify.app/ui/family-tree.html",
+    "author": {"@type": "Person", "name": "Sumit Thapliyal"},
+    "publisher": {"@type": "Organization", "name": "The Wizarding Archive"},
+    "isPartOf": {"@type": "WebSite", "name": "The Wizarding Archive", "url": "https://wizarding-archive-sumit.netlify.app/"}
+  }
+  </script>
+</head>
+<body class="family-tree-page">
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="site-header" id="home">
+    <a class="brand" href="index.html" aria-label="Return to The Wizarding Archive home">
+      <span class="brand-mark">✦</span>
+      <span><small>THE</small> WIZARDING<br />ARCHIVE</span>
+    </a>
+    <button class="menu-toggle" id="family-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="family-nav"><span></span><span></span></button>
+    <nav class="main-nav" id="family-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#films">The Films</a>
+      <a href="index.html#horcruxes">Horcruxes</a>
+      <a href="ui/characters.html">Characters</a>
+      <a class="active" href="ui/family-tree.html" aria-current="page">Family Tree</a>
+      <a href="ui/magic.html">Play</a>
+    </nav>
+    <a class="nav-cta" href="index.html#guides">All guides <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="family-hero section-shell">
+      <div class="family-hero-copy reveal">
+        <p class="eyebrow"><span></span> Lineage and chosen family</p>
+        <h1>Harry Potter<br /><em>family tree.</em></h1>
+        <p class="family-lead">The wizarding world is held together by more than blood. Follow the Potter, Weasley, Black, Gaunt, and Riddle lines—and the friendships that become family.</p>
+        <div class="family-actions">
+          <a class="button button-primary" href="#tree">Read the branches <span>↓</span></a>
+          <button class="button button-ghost" type="button" data-share="Explore the magical Harry Potter family tree on The Wizarding Archive.">Share this tree <span>↗</span></button>
+        </div>
+      </div>
+      <div class="family-hero-seal reveal delay-1" aria-hidden="true">
+        <div class="seal-orbit seal-orbit-one"></div>
+        <div class="seal-orbit seal-orbit-two"></div>
+        <div class="seal-star">✦</div>
+        <div class="seal-ring"><span>LOVE</span><strong>✧</strong><span>CHOICE</span></div>
+        <p>Every branch<br /><em>leads somewhere.</em></p>
+      </div>
+    </section>
+
+    <section class="family-intro section-shell">
+      <div class="section-kicker"><span>01</span><span class="line"></span><span>HOW TO READ IT</span></div>
+      <div class="family-intro-grid">
+        <div class="reveal"><p class="eyebrow"><span></span> A simplified archive map</p><h2>Blood starts the story.<br /><em>Choice completes it.</em></h2></div>
+        <div class="family-intro-copy reveal delay-1"><p>This is a story-first family tree, so it brings related lines together in one readable map. The four branches show ancestry, marriage, and the chosen bonds that make the characters matter to one another.</p><p class="muted">Select any name to open an archive note. The tree is intentionally simplified where the wider wizarding genealogy is not fully documented.</p></div>
+      </div>
+      <div class="tree-legend reveal delay-2" aria-label="Family tree legend">
+        <span><i class="legend-dot legend-dot--gold"></i> Direct family line</span>
+        <span><i class="legend-dot legend-dot--violet"></i> Marriage or alliance</span>
+        <span><i class="legend-dot legend-dot--silver"></i> Chosen family</span>
+      </div>
+    </section>
+
+    <section class="tree-section section-shell" id="tree" aria-labelledby="tree-title">
+      <div class="section-heading tree-heading reveal">
+        <div><p class="eyebrow"><span></span> The living branches</p><h2 id="tree-title">A map of magic,<br /><em>memory, and belonging.</em></h2></div>
+        <p class="heading-note">Hover for a little glow. Select a name for the story behind the connection.</p>
+      </div>
+
+      <div class="tree-stage reveal delay-1">
+        <div class="tree-canopy" aria-hidden="true"><span>✦</span><i></i><b></b><em></em></div>
+        <article class="tree-root">
+          <span class="tree-card-kicker">The story's heart</span>
+          <div class="tree-avatar tree-avatar--root">HP</div>
+          <h3>Harry Potter</h3>
+          <p>A boy shaped by the love he inherited and the family he chose.</p>
+          <button class="node-action" type="button" data-person="harry">Reveal his story <span>↗</span></button>
+        </article>
+        <div class="tree-trunk" aria-hidden="true"></div>
+
+        <div class="tree-branches">
+          <section class="tree-branch tree-branch--potter" aria-labelledby="potter-branch-title">
+            <div class="branch-label"><span class="branch-sigil">✧</span><div><p>Branch I</p><h3 id="potter-branch-title">Potter &amp; Evans</h3></div></div>
+            <div class="branch-stack">
+              <div class="person-pair">
+                <button class="person-card" type="button" data-person="fleamont"><span class="tree-avatar">FP</span><strong>Fleamont Potter</strong><small>Potter line</small></button>
+                <span class="pair-link" aria-hidden="true">✦</span>
+                <button class="person-card" type="button" data-person="euphemia"><span class="tree-avatar">EP</span><strong>Euphemia Potter</strong><small>Potter line</small></button>
+              </div>
+              <span class="generation-link" aria-hidden="true"></span>
+              <div class="person-pair">
+                <button class="person-card" type="button" data-person="james"><span class="tree-avatar">JP</span><strong>James Potter</strong><small>Son of Fleamont</small></button>
+                <span class="pair-link" aria-hidden="true">✦</span>
+                <button class="person-card" type="button" data-person="lily"><span class="tree-avatar">LE</span><strong>Lily Evans</strong><small>Evans family</small></button>
+              </div>
+              <span class="generation-link generation-link--gold" aria-hidden="true"></span>
+              <button class="person-card person-card--child" type="button" data-person="harry"><span class="tree-avatar tree-avatar--root">HP</span><strong>Harry Potter</strong><small>The boy who lived</small></button>
+            </div>
+          </section>
+
+          <section class="tree-branch tree-branch--weasley" aria-labelledby="weasley-branch-title">
+            <div class="branch-label"><span class="branch-sigil">✦</span><div><p>Branch II</p><h3 id="weasley-branch-title">Weasley</h3></div></div>
+            <div class="branch-stack">
+              <div class="person-pair">
+                <button class="person-card" type="button" data-person="arthur"><span class="tree-avatar">AW</span><strong>Arthur Weasley</strong><small>Weasley family</small></button>
+                <span class="pair-link" aria-hidden="true">✦</span>
+                <button class="person-card" type="button" data-person="molly"><span class="tree-avatar">MW</span><strong>Molly Weasley</strong><small>Prewett family</small></button>
+              </div>
+              <span class="generation-link" aria-hidden="true"></span>
+              <div class="weasley-children">
+                <button class="person-card" type="button" data-person="ron"><span class="tree-avatar">RW</span><strong>Ron Weasley</strong><small>Friend and brother</small></button>
+                <button class="person-card" type="button" data-person="ginny"><span class="tree-avatar">GW</span><strong>Ginny Weasley</strong><small>Seeker and sister</small></button>
+                <button class="person-card" type="button" data-person="fred-george"><span class="tree-avatar">FG</span><strong>Fred &amp; George</strong><small>Prankster twins</small></button>
+              </div>
+              <span class="generation-link generation-link--silver" aria-hidden="true"></span>
+              <div class="chosen-link"><span class="chosen-line" aria-hidden="true"></span><button class="person-card person-card--child" type="button" data-person="chosen-family"><span class="tree-avatar tree-avatar--silver">✧</span><strong>Chosen family</strong><small>Ron, Ginny, Hermione &amp; Harry</small></button></div>
+            </div>
+          </section>
+
+          <section class="tree-branch tree-branch--black" aria-labelledby="black-branch-title">
+            <div class="branch-label"><span class="branch-sigil">◇</span><div><p>Branch III</p><h3 id="black-branch-title">Black</h3></div></div>
+            <div class="branch-stack">
+              <div class="person-pair">
+                <button class="person-card" type="button" data-person="cygnus"><span class="tree-avatar">CB</span><strong>Cygnus &amp; Druella</strong><small>House of Black</small></button>
+              </div>
+              <span class="generation-link" aria-hidden="true"></span>
+              <div class="black-sisters">
+                <button class="person-card" type="button" data-person="bellatrix"><span class="tree-avatar">BL</span><strong>Bellatrix</strong><small>Black sister</small></button>
+                <button class="person-card" type="button" data-person="andromeda"><span class="tree-avatar">AB</span><strong>Andromeda</strong><small>Black sister</small></button>
+                <button class="person-card" type="button" data-person="narcissa"><span class="tree-avatar">NB</span><strong>Narcissa</strong><small>Black sister</small></button>
+              </div>
+              <span class="generation-link" aria-hidden="true"></span>
+              <div class="black-branches">
+                <button class="person-card" type="button" data-person="tonks"><span class="tree-avatar">NT</span><strong>Nymphadora Tonks</strong><small>Andromeda's daughter</small></button>
+                <button class="person-card" type="button" data-person="draco"><span class="tree-avatar">DM</span><strong>Draco Malfoy</strong><small>Narcissa's son</small></button>
+              </div>
+            </div>
+          </section>
+
+          <section class="tree-branch tree-branch--riddle" aria-labelledby="riddle-branch-title">
+            <div class="branch-label"><span class="branch-sigil">☽</span><div><p>Branch IV</p><h3 id="riddle-branch-title">Gaunt &amp; Riddle</h3></div></div>
+            <div class="branch-stack">
+              <button class="person-card" type="button" data-person="marvolo"><span class="tree-avatar">MG</span><strong>Marvolo Gaunt</strong><small>Gaunt family</small></button>
+              <span class="generation-link" aria-hidden="true"></span>
+              <div class="person-pair">
+                <button class="person-card" type="button" data-person="merope"><span class="tree-avatar">MG</span><strong>Merope Gaunt</strong><small>Marvolo's daughter</small></button>
+                <span class="pair-link" aria-hidden="true">✦</span>
+                <button class="person-card" type="button" data-person="tom-sr"><span class="tree-avatar">TR</span><strong>Tom Riddle Sr.</strong><small>Muggle father</small></button>
+              </div>
+              <span class="generation-link generation-link--violet" aria-hidden="true"></span>
+              <button class="person-card person-card--dark" type="button" data-person="voldemort"><span class="tree-avatar tree-avatar--dark">TR</span><strong>Tom Riddle</strong><small>Later known as Voldemort</small></button>
+            </div>
+          </section>
+        </div>
+      </div>
+      <p class="tree-caption">A simplified story map—not a complete canonical genealogy. The brightest lines represent the bonds that change the characters' choices.</p>
+    </section>
+
+    <section class="family-notes section-shell">
+      <div class="section-kicker"><span>02</span><span class="line"></span><span>THE CONNECTIONS</span></div>
+      <div class="family-notes-grid">
+        <article class="family-note reveal"><span>01</span><h2>Love is the oldest magic.</h2><p>Lily Potter's sacrifice protects Harry before he can understand what family means. That protection becomes the first invisible thread running through the entire tree.</p></article>
+        <article class="family-note reveal delay-1"><span>02</span><h2>Chosen family is still family.</h2><p>Ron, Hermione, Sirius, the Weasleys, and the wider Order give Harry a home that is built through loyalty, meals, arguments, and showing up when it matters.</p></article>
+        <article class="family-note reveal delay-2"><span>03</span><h2>Blood alone decides nothing.</h2><p>The Black and Gaunt lines show how obsession with ancestry can become cruel. The story repeatedly asks what people do with their inheritance—not whether they deserve it.</p></article>
+      </div>
+    </section>
+
+    <section class="family-next section-shell">
+      <div class="family-next-card reveal">
+        <div><p class="eyebrow"><span></span> Continue exploring</p><h2>Every branch opens<br /><em>another story.</em></h2></div>
+        <div class="family-next-links"><a href="ui/harry-potter-character-guide.html">Read the character guide <span>↗</span></a><a href="ui/harry-potter-patronus-list.html">Explore Patronus forms <span>↗</span></a><a href="ui/characters.html">Open the characters directory <span>↗</span></a><a href="index.html#guides">Back to all guides <span>↗</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="family-insight" id="family-insight" aria-hidden="true" aria-labelledby="insight-title">
+    <button class="insight-close" id="insight-close" type="button" aria-label="Close archive note">×</button>
+    <p class="eyebrow"><span></span> Archive note</p>
+    <h2 id="insight-title">Choose a name</h2>
+    <p id="insight-copy">Select a family member to reveal their place in the story.</p>
+    <a class="text-link" id="insight-link" href="ui/characters.html">Open the characters directory <span>↗</span></a>
+  </aside>
+
+  <footer class="site-footer section-shell"><span>✦ The Wizarding Archive</span><span>Made for the magic we carry with us.</span><span>© 2026 · Unofficial fan project</span></footer>
+  <script src="js/share.js"></script>
+  <script src="js/wand.js"></script>
+  <script src="js/page-loader.js"></script>
+  <script src="js/family-tree.js"></script>
+</body>
+</html>

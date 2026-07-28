@@ -1,0 +1,1 @@
+document.querySelectorAll('.horcrux-card').forEach((card,index)=>{card.style.position='relative';card.insertAdjacentHTML('afterbegin',`<a class="horcrux-card-link" href="ui/horcrux.html?horcruxId=${index+1}" aria-label="Open ${card.querySelector('h3')?.textContent||'Horcrux'}"></a>`)});

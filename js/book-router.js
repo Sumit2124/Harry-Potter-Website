@@ -1,0 +1,1 @@
+const activeBookId=Number(new URLSearchParams(location.search).get('bookId'))||1;const routePrevious=document.querySelector('[data-fill="prev"]'),routeNext=document.querySelector('[data-fill="next"]');if(routePrevious)routePrevious.href=`ui/book.html?bookId=${activeBookId-1}`;if(routeNext)routeNext.href=`ui/book.html?bookId=${activeBookId+1}`;
