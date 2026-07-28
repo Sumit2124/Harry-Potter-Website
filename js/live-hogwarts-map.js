@@ -128,7 +128,13 @@ document.querySelectorAll('[data-roamer]').forEach((roamerButton) => {
   };
   roamerButton.addEventListener('mouseenter', revealRoamer);
   roamerButton.addEventListener('focus', revealRoamer);
-  roamerButton.addEventListener('click', revealRoamer);
+  roamerButton.addEventListener('click', () => {
+    revealRoamer();
+    const mapBoard = document.querySelector('.live-map-board');
+    if (mapBoard && window.matchMedia('(max-width: 1050px)').matches) {
+      mapBoard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
 
 selectLiveLocation('great-hall');

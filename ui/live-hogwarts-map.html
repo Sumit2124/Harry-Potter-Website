@@ -4,11 +4,11 @@
   <base href="../">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Hogwarts Map: Moving Footsteps and Castle Locations</title>
-  <meta name="description" content="Open a full-page live Hogwarts map with moving footsteps, character names, hover messages, and clickable castle locations from the Harry Potter story.">
+  <title>Live Hogwarts Map: Roaming Wizards and Castle Locations</title>
+  <meta name="description" content="Open a full-page live Hogwarts map with roaming wizard icons, character names, hover messages, and clickable castle locations from the Harry Potter story.">
   <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/live-hogwarts-map.html">
-  <meta property="og:title" content="Live Hogwarts Map with Moving Footsteps">
-  <meta property="og:description" content="Watch named footsteps roam around Hogwarts and click castle locations without overlay issues.">
+  <meta property="og:title" content="Live Hogwarts Map with Roaming Wizards">
+  <meta property="og:description" content="Watch named wizard icons roam around Hogwarts and explore clickable castle locations.">
   <meta property="og:url" content="https://wizarding-archive-sumit.netlify.app/live-hogwarts-map.html">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/overrides.css">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/archive-explorers.css">
   <link rel="stylesheet" href="css/live-map.css">
   <link rel="stylesheet" href="css/tap-fixes.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Live Hogwarts Map: Moving Footsteps and Castle Locations","description":"A full-page interactive Harry Potter fan map with moving footsteps, named character paths, hover messages, and clickable Hogwarts locations.","url":"https://wizarding-archive-sumit.netlify.app/live-hogwarts-map.html","isPartOf":{"@type":"WebSite","name":"The Wizarding Archive","url":"https://wizarding-archive-sumit.netlify.app/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Live Hogwarts Map: Roaming Wizards and Castle Locations","description":"A full-page interactive Harry Potter fan map with roaming wizard icons, named character paths, hover messages, and clickable Hogwarts locations.","url":"https://wizarding-archive-sumit.netlify.app/live-hogwarts-map.html","isPartOf":{"@type":"WebSite","name":"The Wizarding Archive","url":"https://wizarding-archive-sumit.netlify.app/"}}</script>
 </head>
 <body class="live-map-page">
   <header class="site-header"><a class="brand" href="index.html">The Wizarding Archive</a><nav><a href="index.html">Home</a><a href="ui/interactive-hogwarts-map.html">Map guide</a><a href="ui/complete-harry-potter-spell-encyclopedia.html">Spells</a><a href="ui/magic.html">Play</a></nav></header>
@@ -27,11 +27,11 @@
         <p class="eyebrow">Marauder mode</p>
         <h1>Hogwarts<br><em>in motion</em></h1>
       </div>
-      <p>This is the full live version of the Hogwarts map. Locations stay clickable because the detail panel is outside the parchment, and the named footsteps can be hovered, focused, or tapped for small story messages.</p>
+      <p>This is the full live version of the Hogwarts map. Locations stay clickable because the detail panel is outside the parchment, and the roaming wizards can be hovered, focused, or tapped for small story messages.</p>
     </section>
 
     <section class="live-map-layout" aria-label="Full live Hogwarts map">
-      <div class="explorer-panel map-art marauder-map live-map-board" id="map" aria-label="Full-page Hogwarts map with roaming named footsteps">
+      <div class="explorer-panel map-art marauder-map live-map-board" id="map" aria-label="Full-page Hogwarts map with roaming named wizard icons">
         <div class="map-parchment" aria-hidden="true"></div>
         <div class="map-fold map-fold-one" aria-hidden="true"></div>
         <div class="map-fold map-fold-two" aria-hidden="true"></div>
@@ -74,7 +74,7 @@
         <button class="map-marker" type="button" data-location="headmasters-office" aria-label="Show Headmaster's Office details">HO</button>
         <button class="map-marker" type="button" data-location="whomping-willow" aria-label="Show Whomping Willow details">WW</button>
 
-        <div class="roaming-layer" aria-label="Roaming character footsteps">
+        <div class="roaming-layer" aria-label="Roaming wizard characters">
           <button class="map-person person-harry" type="button" data-person="Harry Potter" data-toast="Harry is cutting across the castle again; if there is trouble, he is probably walking straight toward it."><i aria-hidden="true"></i><span>Harry</span></button>
           <button class="map-person person-hermione" type="button" data-person="Hermione Granger" data-toast="Hermione is moving from the library with exactly the book everyone else forgot to read."><i aria-hidden="true"></i><span>Hermione</span></button>
           <button class="map-person person-ron" type="button" data-person="Ron Weasley" data-toast="Ron is taking the brave route, preferably after confirming there are no giant spiders nearby."><i aria-hidden="true"></i><span>Ron</span></button>
@@ -84,7 +84,7 @@
           <button class="map-person person-dumbledore" type="button" data-person="Albus Dumbledore" data-toast="Dumbledore appears exactly where the story needs guidance, mystery, or a lemon-drop level distraction."><i aria-hidden="true"></i><span>Dumbledore</span></button>
         </div>
 
-        <div class="map-live-status" aria-hidden="true"><span></span> Live named footsteps moving slowly</div>
+        <div class="map-live-status" aria-hidden="true"><span></span> Wizards roaming the castle</div>
         <div class="map-toast" data-map-toast aria-live="polite"></div>
       </div>
 
