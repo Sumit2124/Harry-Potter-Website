@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Hogwarts Map: Castle Locations and Story Guide</title>
+  <meta name="description" content="Explore an interactive Hogwarts map with key Harry Potter locations, story moments, hidden routes, and guide links across the Wizarding Archive.">
+  <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/interactive-hogwarts-map.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/overrides.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <link rel="stylesheet" href="css/archive-explorers.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Interactive Hogwarts Map: Castle Locations and Story Guide","description":"An interactive Harry Potter fan map explaining major Hogwarts locations, routes, and story moments.","url":"https://wizarding-archive-sumit.netlify.app/interactive-hogwarts-map.html","isPartOf":{"@type":"WebSite","name":"The Wizarding Archive","url":"https://wizarding-archive-sumit.netlify.app/"}}</script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html">The Wizarding Archive</a><nav><a href="index.html">Home</a><a href="index.html#guides">Guides</a><a href="ui/magic.html">Play</a></nav></header>
+  <main class="explorer-page guide-page">
+    <section class="explorer-hero">
+      <div>
+        <p class="eyebrow">Castle atlas</p>
+        <h1>Interactive Hogwarts<br><em>map</em></h1>
+        <p class="explorer-intro">Hogwarts is more than a school setting. It behaves like a story engine: staircases redirect choices, rooms reveal need, forests test courage, and the safest-looking halls often hide the next mystery.</p>
+        <div class="explorer-actions">
+          <a class="explorer-button" href="ui/interactive-hogwarts-map.html#map">Open the map</a>
+          <a class="explorer-button" href="ui/complete-harry-potter-spell-encyclopedia.html">Browse spells</a>
+        </div>
+      </div>
+      <div class="explorer-panel map-art" id="map" aria-label="Stylized interactive Hogwarts map">
+        <div class="map-pitch" aria-hidden="true"></div>
+        <div class="map-castle" aria-hidden="true"></div>
+        <div class="map-lake" aria-hidden="true"></div>
+        <div class="map-forest" aria-hidden="true"></div>
+        <button class="map-marker active" type="button" data-location="great-hall" aria-label="Show Great Hall details">GH</button>
+        <button class="map-marker" type="button" data-location="library" aria-label="Show Hogwarts Library details">LB</button>
+        <button class="map-marker" type="button" data-location="room-of-requirement" aria-label="Show Room of Requirement details">RR</button>
+        <button class="map-marker" type="button" data-location="forbidden-forest" aria-label="Show Forbidden Forest details">FF</button>
+        <button class="map-marker" type="button" data-location="black-lake" aria-label="Show Black Lake details">BL</button>
+        <button class="map-marker" type="button" data-location="quidditch-pitch" aria-label="Show Quidditch Pitch details">QP</button>
+        <div class="map-note">
+          <small>Selected location</small>
+          <strong data-map-title>The Great Hall</strong>
+          <span data-map-copy>Feasts, Sorting ceremonies, school notices, and several public turning points begin here.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="explorer-section">
+      <h2>Hogwarts locations explained</h2>
+      <p>This map focuses on the places that repeatedly shape Harry's story. The exact floor plan changes across books and films, but the emotional geography stays consistent: the castle rewards attention, punishes arrogance, and protects students only when they also protect each other.</p>
+      <div class="location-grid">
+        <article class="location-card"><small>School heart</small><h3>The Great Hall</h3><p>The Great Hall is where Hogwarts becomes public: Sorting, feasts, announcements, celebrations, fear, and mourning all pass through the same enchanted ceiling.</p></article>
+        <article class="location-card"><small>Research trail</small><h3>The Library</h3><p>The library turns curiosity into survival. Hermione's research habits often move the plot before any duel does, especially when the trio needs rules, history, or forbidden knowledge.</p></article>
+        <article class="location-card"><small>Hidden need</small><h3>Room of Requirement</h3><p>The Room appears for genuine need, which makes it both refuge and trap. It trains Dumbledore's Army and later hides one of Voldemort's soul fragments.</p></article>
+        <article class="location-card"><small>Forbidden edge</small><h3>Forbidden Forest</h3><p>The forest is where school safety ends. It carries centaurs, spiders, unicorns, punishment, and finally Harry's walk toward sacrifice.</p></article>
+        <article class="location-card"><small>Deep water</small><h3>Black Lake</h3><p>The lake is not decoration. It becomes central during the Triwizard Tournament and reminds visitors that Hogwarts has whole worlds beneath the surface.</p></article>
+        <article class="location-card"><small>Public courage</small><h3>Quidditch Pitch</h3><p>Quidditch makes Harry visible as a teammate rather than only a legend. It also gives the series movement, risk, rivalry, and release.</p></article>
+      </div>
+    </section>
+
+    <section class="explorer-section">
+      <h2>Important routes through the castle</h2>
+      <p>Good Hogwarts navigation is really story navigation. These routes connect places that matter together and help readers understand why a location returns at the exact moment it does.</p>
+      <ul class="route-list">
+        <li><strong>First-year mystery route:</strong> Great Hall to third-floor corridor to trapdoor chambers. This path turns school wonder into danger and introduces the pattern of hidden tests.</li>
+        <li><strong>Dumbledore's Army route:</strong> corridors to Room of Requirement. The route matters because students reclaim Defence Against the Dark Arts when official authority fails them.</li>
+        <li><strong>Triwizard route:</strong> Great Hall to Black Lake to maze grounds. The tournament expands Hogwarts from school drama into international wizarding politics.</li>
+        <li><strong>Final battle route:</strong> Room of Requirement to Great Hall to courtyard and forest. The castle becomes a battlefield, but also a community choosing to stand together.</li>
+      </ul>
+    </section>
+
+    <section class="explorer-section">
+      <h2>Where to go next</h2>
+      <div class="quick-grid">
+        <a class="quick-card" href="ui/harry-potter-movie-order.html"><small>Watch path</small><h3>Movie order</h3><p>Follow the films in sequence and connect each Hogwarts return to the wider story.</p></a>
+        <a class="quick-card" href="ui/family-tree.html"><small>People path</small><h3>Family tree</h3><p>Trace the families, loyalties, and relationships that keep pulling students back to the castle.</p></a>
+        <a class="quick-card" href="ui/harry-potter-horcruxes-explained.html"><small>Dark path</small><h3>Horcrux guide</h3><p>Understand why the Room of Requirement becomes one of the most important places in the final hunt.</p></a>
+      </div>
+    </section>
+  </main>
+  <script src="js/hogwarts-map.js"></script>
+  <script src="js/guide-support.js"></script>
+</body>
+</html>

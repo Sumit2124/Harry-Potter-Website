@@ -14,6 +14,7 @@ This is an unofficial fan project created by [Sumit Thapliyal](https://github.co
 - Wallpaper gallery and archive-style content sections
 - Interactive Play page with house and character quizzes, a daily quiz, spell generator, Horcrux challenge, share-by-copy, and local score storage
 - Search-focused guides for Horcruxes, characters, movie order, spells, books, wands, Patronuses, houses, the timeline, Deathly Hallows, and the ending
+- Interactive Hogwarts map and complete spell encyclopedia with static SEO content plus JavaScript filtering
 - Internal “keep exploring” paths, canonical URLs, descriptive meta descriptions, JSON-LD, robots.txt, and sitemap.xml
 - Weekly character focus, Friday wallpaper prompts, hidden spell prompts, and a daily return loop
 - Native social sharing with a safe clipboard fallback for desktop browsers
@@ -41,6 +42,8 @@ Then open `http://localhost:4173`.
 | `ui/characters.html` | Character directory |
 | `ui/character.html?id=harry-potter` | Character profile route |
 | `ui/magic.html` | Quizzes, spell generator, and return features |
+| `ui/interactive-hogwarts-map.html` | Interactive Hogwarts location guide |
+| `ui/complete-harry-potter-spell-encyclopedia.html` | Searchable spell encyclopedia |
 | `ui/harry-potter-*.html` | Search-focused guide pages with metadata and internal links |
 
 ## Project structure

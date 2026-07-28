@@ -92,3 +92,13 @@
   from = "/harry-potter-wands-explained.html"
   to = "/ui/harry-potter-wands-explained.html"
   status = 200
+
+[[redirects]]
+  from = "/interactive-hogwarts-map.html"
+  to = "/ui/interactive-hogwarts-map.html"
+  status = 200
+
+[[redirects]]
+  from = "/complete-harry-potter-spell-encyclopedia.html"
+  to = "/ui/complete-harry-potter-spell-encyclopedia.html"
+  status = 200

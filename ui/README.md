@@ -4,7 +4,7 @@ All substantive HTML UI now lives in this folder. The one exception is the root 
 
 The presentation layer is split across:
 
-- `ui/*.html` for the main archive, reusable book/Horcrux/character routes, the Play page, guide pages, and the magical family tree.
+- `ui/*.html` for the main archive, reusable book/Horcrux/character routes, the Play page, guide pages, the magical family tree, the Hogwarts map, and the spell encyclopedia.
 - `css/` for the visual system and page-level styles.
 - `js/` for interactions, reusable route data, loader behaviour, sharing, and weekly archive features.
 - `netlify.toml` for compatibility rewrites from the original public URLs to these `ui/` files.
