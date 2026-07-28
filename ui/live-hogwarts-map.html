@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Hogwarts Map: Moving Footsteps and Castle Locations</title>
+  <meta name="description" content="Open a full-page live Hogwarts map with moving footsteps, character names, hover messages, and clickable castle locations from the Harry Potter story.">
+  <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/live-hogwarts-map.html">
+  <meta property="og:title" content="Live Hogwarts Map with Moving Footsteps">
+  <meta property="og:description" content="Watch named footsteps roam around Hogwarts and click castle locations without overlay issues.">
+  <meta property="og:url" content="https://wizarding-archive-sumit.netlify.app/live-hogwarts-map.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/overrides.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <link rel="stylesheet" href="css/archive-explorers.css">
+  <link rel="stylesheet" href="css/live-map.css">
+  <link rel="stylesheet" href="css/tap-fixes.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Live Hogwarts Map: Moving Footsteps and Castle Locations","description":"A full-page interactive Harry Potter fan map with moving footsteps, named character paths, hover messages, and clickable Hogwarts locations.","url":"https://wizarding-archive-sumit.netlify.app/live-hogwarts-map.html","isPartOf":{"@type":"WebSite","name":"The Wizarding Archive","url":"https://wizarding-archive-sumit.netlify.app/"}}</script>
+</head>
+<body class="live-map-page">
+  <header class="site-header"><a class="brand" href="index.html">The Wizarding Archive</a><nav><a href="index.html">Home</a><a href="ui/interactive-hogwarts-map.html">Map guide</a><a href="ui/complete-harry-potter-spell-encyclopedia.html">Spells</a><a href="ui/magic.html">Play</a></nav></header>
+
+  <main class="live-map-shell">
+    <section class="live-map-intro">
+      <div>
+        <p class="eyebrow">Marauder mode</p>
+        <h1>Hogwarts<br><em>in motion</em></h1>
+      </div>
+      <p>This is the full live version of the Hogwarts map. Locations stay clickable because the detail panel is outside the parchment, and the named footsteps can be hovered, focused, or tapped for small story messages.</p>
+    </section>
+
+    <section class="live-map-layout" aria-label="Full live Hogwarts map">
+      <div class="explorer-panel map-art marauder-map live-map-board" id="map" aria-label="Full-page Hogwarts map with roaming named footsteps">
+        <div class="map-parchment" aria-hidden="true"></div>
+        <div class="map-fold map-fold-one" aria-hidden="true"></div>
+        <div class="map-fold map-fold-two" aria-hidden="true"></div>
+        <div class="map-path path-one" aria-hidden="true"></div>
+        <div class="map-path path-two" aria-hidden="true"></div>
+        <div class="map-path path-three" aria-hidden="true"></div>
+        <div class="map-path path-four" aria-hidden="true"></div>
+        <div class="map-path path-five" aria-hidden="true"></div>
+        <div class="map-room great-hall-room" aria-hidden="true"><span>Great Hall</span></div>
+        <div class="map-room library-room" aria-hidden="true"><span>Library</span></div>
+        <div class="map-room requirement-room" aria-hidden="true"><span>Room of Requirement</span></div>
+        <div class="map-room forest-room" aria-hidden="true"><span>Forbidden Forest</span></div>
+        <div class="map-room lake-room" aria-hidden="true"><span>Black Lake</span></div>
+        <div class="map-room pitch-room" aria-hidden="true"><span>Quidditch Pitch</span></div>
+        <div class="map-room astronomy-room" aria-hidden="true"><span>Astronomy Tower</span></div>
+        <div class="map-room hospital-room" aria-hidden="true"><span>Hospital Wing</span></div>
+        <div class="map-room owlery-room" aria-hidden="true"><span>Owlery</span></div>
+        <div class="map-room hagrid-room" aria-hidden="true"><span>Hagrid's Hut</span></div>
+        <div class="map-room dungeon-room" aria-hidden="true"><span>Dungeons</span></div>
+        <div class="map-room chamber-room" aria-hidden="true"><span>Chamber</span></div>
+        <div class="map-room gryffindor-room" aria-hidden="true"><span>Gryffindor</span></div>
+        <div class="map-room slytherin-room" aria-hidden="true"><span>Slytherin</span></div>
+        <div class="map-room headmaster-room" aria-hidden="true"><span>Headmaster</span></div>
+        <div class="map-room willow-room" aria-hidden="true"><span>Whomping Willow</span></div>
+
+        <button class="map-marker active" type="button" data-location="great-hall" aria-label="Show Great Hall details">GH</button>
+        <button class="map-marker" type="button" data-location="library" aria-label="Show Hogwarts Library details">LB</button>
+        <button class="map-marker" type="button" data-location="room-of-requirement" aria-label="Show Room of Requirement details">RR</button>
+        <button class="map-marker" type="button" data-location="forbidden-forest" aria-label="Show Forbidden Forest details">FF</button>
+        <button class="map-marker" type="button" data-location="black-lake" aria-label="Show Black Lake details">BL</button>
+        <button class="map-marker" type="button" data-location="quidditch-pitch" aria-label="Show Quidditch Pitch details">QP</button>
+        <button class="map-marker" type="button" data-location="astronomy-tower" aria-label="Show Astronomy Tower details">AT</button>
+        <button class="map-marker" type="button" data-location="hospital-wing" aria-label="Show Hospital Wing details">HW</button>
+        <button class="map-marker" type="button" data-location="owlery" aria-label="Show Owlery details">OW</button>
+        <button class="map-marker" type="button" data-location="hagrids-hut" aria-label="Show Hagrid's Hut details">HH</button>
+        <button class="map-marker" type="button" data-location="dungeons" aria-label="Show Dungeons details">DG</button>
+        <button class="map-marker" type="button" data-location="chamber-of-secrets" aria-label="Show Chamber of Secrets details">CS</button>
+        <button class="map-marker" type="button" data-location="gryffindor-common-room" aria-label="Show Gryffindor Common Room details">GR</button>
+        <button class="map-marker" type="button" data-location="slytherin-common-room" aria-label="Show Slytherin Common Room details">SL</button>
+        <button class="map-marker" type="button" data-location="headmasters-office" aria-label="Show Headmaster's Office details">HO</button>
+        <button class="map-marker" type="button" data-location="whomping-willow" aria-label="Show Whomping Willow details">WW</button>
+
+        <div class="roaming-layer" aria-label="Roaming character footsteps">
+          <button class="map-person person-harry" type="button" data-person="Harry Potter" data-toast="Harry is cutting across the castle again; if there is trouble, he is probably walking straight toward it."><i aria-hidden="true"></i><span>Harry</span></button>
+          <button class="map-person person-hermione" type="button" data-person="Hermione Granger" data-toast="Hermione is moving from the library with exactly the book everyone else forgot to read."><i aria-hidden="true"></i><span>Hermione</span></button>
+          <button class="map-person person-ron" type="button" data-person="Ron Weasley" data-toast="Ron is taking the brave route, preferably after confirming there are no giant spiders nearby."><i aria-hidden="true"></i><span>Ron</span></button>
+          <button class="map-person person-draco" type="button" data-person="Draco Malfoy" data-toast="Draco is drifting near the dungeons, trying to look casual and failing in a very expensive way."><i aria-hidden="true"></i><span>Draco</span></button>
+          <button class="map-person person-luna" type="button" data-person="Luna Lovegood" data-toast="Luna is following a route that makes perfect sense if you believe the castle listens back."><i aria-hidden="true"></i><span>Luna</span></button>
+          <button class="map-person person-snape" type="button" data-person="Severus Snape" data-toast="Snape is moving like a shadow between lessons, secrets, and very pointed silences."><i aria-hidden="true"></i><span>Snape</span></button>
+          <button class="map-person person-dumbledore" type="button" data-person="Albus Dumbledore" data-toast="Dumbledore appears exactly where the story needs guidance, mystery, or a lemon-drop level distraction."><i aria-hidden="true"></i><span>Dumbledore</span></button>
+        </div>
+
+        <div class="map-live-status" aria-hidden="true"><span></span> Live named footsteps moving slowly</div>
+        <div class="map-toast" data-map-toast aria-live="polite"></div>
+      </div>
+
+      <aside class="live-map-panel">
+        <p class="eyebrow">Selected location</p>
+        <h2 data-live-location-title>The Great Hall</h2>
+        <p data-live-location-copy>The social heart of Hogwarts. Feasts, Sorting ceremonies, school warnings, celebrations, and final-battle regrouping all pass through this enchanted hall.</p>
+        <div class="live-panel-meta" aria-label="Selected location summary">
+          <span>Region <b data-live-region>Castle center</b></span>
+          <span>Interaction <b>Click any pin</b></span>
+          <span>Roaming names <b>Hover or tap</b></span>
+        </div>
+        <p>Hover a moving name on the map, or use the buttons below on mobile, to reveal what that character is doing on the Marauder-style map.</p>
+        <div class="roamer-list" aria-label="Roaming character messages">
+          <button type="button" data-roamer="Harry Potter" data-toast="Harry is cutting across the castle again; if there is trouble, he is probably walking straight toward it.">Harry Potter</button>
+          <button type="button" data-roamer="Hermione Granger" data-toast="Hermione is moving from the library with exactly the book everyone else forgot to read.">Hermione Granger</button>
+          <button type="button" data-roamer="Ron Weasley" data-toast="Ron is taking the brave route, preferably after confirming there are no giant spiders nearby.">Ron Weasley</button>
+          <button type="button" data-roamer="Draco Malfoy" data-toast="Draco is drifting near the dungeons, trying to look casual and failing in a very expensive way.">Draco Malfoy</button>
+          <button type="button" data-roamer="Luna Lovegood" data-toast="Luna is following a route that makes perfect sense if you believe the castle listens back.">Luna Lovegood</button>
+          <button type="button" data-roamer="Severus Snape" data-toast="Snape is moving like a shadow between lessons, secrets, and very pointed silences.">Severus Snape</button>
+          <button type="button" data-roamer="Albus Dumbledore" data-toast="Dumbledore appears exactly where the story needs guidance, mystery, or a lemon-drop level distraction.">Albus Dumbledore</button>
+        </div>
+        <div class="live-map-footer">
+          <a class="explorer-button" href="ui/interactive-hogwarts-map.html">Back to map guide</a>
+          <a class="explorer-button" href="index.html#guides">More guides</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="js/live-hogwarts-map.js"></script>
+</body>
+</html>

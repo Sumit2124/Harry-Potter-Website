@@ -1,0 +1,68 @@
+.live-map-page{min-height:100vh;background:radial-gradient(circle at 20% 10%,rgba(212,173,102,.08),transparent 28%),linear-gradient(180deg,#070912,#050711 58%,#090b16);color:var(--cream)}
+.live-map-page .site-header{position:sticky;top:0;z-index:40;background:rgba(7,9,18,.9);backdrop-filter:blur(16px)}
+.live-map-shell{width:min(1420px,94vw);margin:0 auto;padding:52px 0 86px}
+.live-map-intro{display:grid;grid-template-columns:minmax(0,.85fr) minmax(280px,.45fr);gap:28px;align-items:end;margin-bottom:26px}
+.live-map-intro h1{font:600 clamp(42px,6.5vw,86px)/.96 var(--serif);letter-spacing:-.06em;margin:0;color:var(--cream)}
+.live-map-intro h1 em{font-family:'Uncial Antiqua',serif;color:var(--gold-bright);font-style:normal;font-weight:400}
+.live-map-intro p{color:var(--muted);font-size:clamp(15px,1.4vw,19px);line-height:1.75;margin:0}
+.live-map-layout{position:relative;display:grid;grid-template-columns:minmax(0,70%) minmax(280px,30%);gap:22px;align-items:stretch}
+.live-map-board{min-height:72vh;height:min(780px,72vh);aspect-ratio:auto}
+.live-map-board .map-parchment{inset:16px}
+.live-map-board .map-live-status{left:34px;top:32px;max-width:340px}
+.live-map-board .map-marker{z-index:18;width:38px;height:38px;font-size:12px}
+.live-map-board .map-marker:hover,.live-map-board .map-marker.active{transform:scale(1.2);box-shadow:0 0 0 7px rgba(78,39,14,.1),0 0 34px rgba(75,39,15,.34)}
+.live-map-panel{position:relative;overflow:hidden;border:1px solid rgba(212,173,102,.38);background:linear-gradient(145deg,rgba(24,28,53,.9),rgba(8,10,22,.96));padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.24)}
+.live-map-panel::after{content:"HP";position:absolute;right:-14px;bottom:-42px;color:rgba(242,211,148,.035);font:700 168px/.8 var(--serif);letter-spacing:-.08em;pointer-events:none}
+.live-map-panel h2{font:600 clamp(32px,3.4vw,52px)/1.02 var(--serif);letter-spacing:-.045em;color:var(--cream);margin:0 0 16px}
+.live-map-panel p{position:relative;color:var(--muted);font-size:15px;line-height:1.8;margin:0 0 22px}
+.live-panel-meta{display:grid;gap:12px;margin:28px 0;position:relative}
+.live-panel-meta span{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(242,211,148,.12);padding-bottom:12px;color:var(--muted);font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.live-panel-meta b{color:var(--gold-bright);font-weight:800;text-align:right}
+.roamer-list{position:relative;display:grid;gap:10px;margin-top:26px}
+.roamer-list button{border:1px solid rgba(242,211,148,.2);background:rgba(212,173,102,.07);color:var(--cream);padding:12px 13px;text-align:left;font:800 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:transform .3s ease,border-color .3s ease,background .3s ease}
+.roamer-list button:hover,.roamer-list button:focus-visible{transform:translateX(5px);border-color:rgba(242,211,148,.65);background:rgba(212,173,102,.14);outline:none}
+.roaming-layer{position:absolute;inset:16px;z-index:15;pointer-events:none}
+.map-person{position:absolute;left:var(--start-x);top:var(--start-y);z-index:20;display:grid;place-items:center;gap:4px;border:0;background:transparent;color:#361907;cursor:pointer;pointer-events:none;animation:roam-person var(--duration,34s) linear infinite;animation-delay:var(--delay,0s)}
+.map-person::before,.map-person::after{content:"";position:absolute;width:12px;height:19px;border-radius:58% 42% 62% 38%;background:rgba(44,20,8,.88);box-shadow:0 0 12px rgba(44,20,8,.18)}
+.map-person::before{left:10px;top:8px;transform:rotate(-18deg)}
+.map-person::after{right:10px;top:24px;transform:rotate(18deg)}
+.map-person i{width:9px;height:9px;border-radius:50%;background:#3a1a07;box-shadow:0 0 0 7px rgba(58,26,7,.08),0 0 22px rgba(58,26,7,.24)}
+.map-person span{margin-top:36px;white-space:nowrap;border:1px solid rgba(83,45,18,.5);background:rgba(236,208,150,.88);padding:6px 9px;border-radius:999px;color:#351907;font:900 10px var(--sans);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 9px 18px rgba(76,40,16,.12);pointer-events:auto}
+.map-person:hover span,.map-person:focus-visible span{background:#f9df9a;box-shadow:0 0 0 5px rgba(90,47,20,.09),0 12px 24px rgba(76,40,16,.18)}
+.map-person:focus-visible{outline:2px solid rgba(90,47,20,.55);outline-offset:12px}
+.person-harry{--start-x:17%;--start-y:60%;--move-x:36vw;--move-y:-24vh;--duration:42s}
+.person-hermione{--start-x:55%;--start-y:42%;--move-x:-22vw;--move-y:-20vh;--duration:38s;--delay:-8s}
+.person-ron{--start-x:34%;--start-y:34%;--move-x:25vw;--move-y:28vh;--duration:45s;--delay:-17s}
+.person-draco{--start-x:69%;--start-y:70%;--move-x:-16vw;--move-y:-34vh;--duration:40s;--delay:-12s}
+.person-luna{--start-x:22%;--start-y:12%;--move-x:28vw;--move-y:10vh;--duration:47s;--delay:-23s}
+.person-snape{--start-x:54%;--start-y:63%;--move-x:7vw;--move-y:-42vh;--duration:44s;--delay:-29s}
+.person-dumbledore{--start-x:57%;--start-y:23%;--move-x:18vw;--move-y:10vh;--duration:50s;--delay:-34s}
+@keyframes roam-person{
+  0%{transform:translate(0,0) rotate(-6deg)}
+  18%{transform:translate(calc(var(--move-x) * .35),calc(var(--move-y) * .18)) rotate(8deg)}
+  38%{transform:translate(calc(var(--move-x) * .82),calc(var(--move-y) * .55)) rotate(-4deg)}
+  56%{transform:translate(var(--move-x),var(--move-y)) rotate(7deg)}
+  76%{transform:translate(calc(var(--move-x) * .42),calc(var(--move-y) * .88)) rotate(-8deg)}
+  100%{transform:translate(0,0) rotate(-6deg)}
+}
+.map-toast{position:absolute;z-index:35;left:50%;top:18px;transform:translate(-50%,-12px);width:min(520px,calc(100% - 36px));border:1px solid rgba(93,52,21,.42);background:rgba(249,224,160,.96);color:#351907;padding:15px 17px;box-shadow:0 22px 48px rgba(45,21,8,.22);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease}
+.map-toast.show{opacity:1;transform:translate(-50%,0)}
+.map-toast strong{display:block;font:900 11px var(--sans);letter-spacing:.13em;text-transform:uppercase;color:#683916;margin-bottom:5px}
+.map-toast span{display:block;font-size:14px;line-height:1.55}
+.live-map-footer{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+@media(max-width:1050px){
+  .live-map-layout{grid-template-columns:1fr}
+  .live-map-board{height:68vh;min-height:620px}
+  .live-map-panel{min-height:auto}
+  .person-harry,.person-hermione,.person-ron,.person-draco,.person-luna,.person-snape,.person-dumbledore{--move-x:22vw}
+}
+@media(max-width:700px){
+  .live-map-shell{width:min(94vw,1420px);padding:34px 0 64px}
+  .live-map-intro{grid-template-columns:1fr}
+  .live-map-board{min-height:620px;height:72vh}
+  .live-map-board .map-live-status{left:24px;top:24px;max-width:250px;font-size:9px}
+  .live-map-board .map-marker{width:32px;height:32px;font-size:10px}
+  .live-map-panel{padding:22px}
+  .map-person span{font-size:9px;padding:5px 7px}
+  .map-person::before,.map-person::after{width:10px;height:16px}
+}

@@ -99,6 +99,11 @@
   status = 200
 
 [[redirects]]
+  from = "/live-hogwarts-map.html"
+  to = "/ui/live-hogwarts-map.html"
+  status = 200
+
+[[redirects]]
   from = "/complete-harry-potter-spell-encyclopedia.html"
   to = "/ui/complete-harry-potter-spell-encyclopedia.html"
   status = 200
