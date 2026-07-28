@@ -29,6 +29,11 @@
   status = 200
 
 [[redirects]]
+  from = "/ui/family-tree"
+  to = "/ui/family-tree.html"
+  status = 200
+
+[[redirects]]
   from = "/harry-potter-books-in-order.html"
   to = "/ui/harry-potter-books-in-order.html"
   status = 200

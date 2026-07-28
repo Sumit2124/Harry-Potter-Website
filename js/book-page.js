@@ -12,6 +12,7 @@ const books=[
 ];
 const index=Number(document.body.dataset.book)||0, book=books[index], image=`https://image.tmdb.org/t/p/w780/${posters[index]}.jpg`;
 document.title=`${book[0]} | The Wizarding Archive`;
+const canonicalLink=document.querySelector('link[rel="canonical"]')||document.head.appendChild(Object.assign(document.createElement('link'),{rel:'canonical'}));const canonicalUrl=new URL('ui/book.html',document.baseURI);canonicalUrl.searchParams.set('bookId',index+1);canonicalLink.href=canonicalUrl.href;const descriptionMeta=document.querySelector('meta[name="description"]')||document.head.appendChild(Object.assign(document.createElement('meta'),{name:'description'}));descriptionMeta.content=`${book[0]} plot summary, key moments, release year, and story details from The Wizarding Archive.`;
 document.querySelector('[data-fill="meta"]').textContent=`Part ${String(index+1).padStart(2,'0')} · ${book[1]}`;
 document.querySelector('[data-fill="title"]').innerHTML=book[0].replace(' and ',' and <br><em>')+'</em>';
 document.querySelector('[data-fill="short"]').textContent=book[0].replace('Harry Potter and ','');
