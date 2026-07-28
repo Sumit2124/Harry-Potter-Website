@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Hogwarts Map: Castle Locations and Story Guide</title>
-  <meta name="description" content="Explore an interactive Hogwarts map with key Harry Potter locations, story moments, hidden routes, and guide links across the Wizarding Archive.">
+  <meta name="description" content="Explore an interactive Hogwarts map with animated footsteps, castle rooms, towers, common rooms, the lake, forest, Hagrid's hut, and key story locations.">
   <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/interactive-hogwarts-map.html">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/overrides.css">
   <link rel="stylesheet" href="css/guide.css">
   <link rel="stylesheet" href="css/archive-explorers.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Interactive Hogwarts Map: Castle Locations and Story Guide","description":"An interactive Harry Potter fan map explaining major Hogwarts locations, routes, and story moments.","url":"https://wizarding-archive-sumit.netlify.app/interactive-hogwarts-map.html","isPartOf":{"@type":"WebSite","name":"The Wizarding Archive","url":"https://wizarding-archive-sumit.netlify.app/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Interactive Hogwarts Map: Castle Locations and Story Guide","description":"An interactive Harry Potter fan map with animated footsteps and explanations for major Hogwarts rooms, towers, grounds, and story locations.","url":"https://wizarding-archive-sumit.netlify.app/interactive-hogwarts-map.html","isPartOf":{"@type":"WebSite","name":"The Wizarding Archive","url":"https://wizarding-archive-sumit.netlify.app/"}}</script>
 </head>
 <body>
-  <header class="site-header"><a class="brand" href="index.html">The Wizarding Archive</a><nav><a href="index.html">Home</a><a href="index.html#guides">Guides</a><a class="active" href="ui/interactive-hogwarts-map.html">Map</a><a href="ui/magic.html">Play</a></nav></header>
+  <header class="site-header"><a class="brand" href="index.html">The Wizarding Archive</a><nav><a href="index.html">Home</a><a href="index.html#guides">Guides</a><a class="active" href="interactive-hogwarts-map.html">Map</a><a href="ui/magic.html">Play</a></nav></header>
   <main class="explorer-page guide-page">
     <section class="explorer-hero">
       <div>
@@ -22,21 +22,53 @@
         <h1>Interactive Hogwarts<br><em>map</em></h1>
         <p class="explorer-intro">Hogwarts is more than a school setting. It behaves like a story engine: staircases redirect choices, rooms reveal need, forests test courage, and the safest-looking halls often hide the next mystery.</p>
         <div class="explorer-actions">
-          <a class="explorer-button" href="ui/interactive-hogwarts-map.html#map">Open the map</a>
+          <a class="explorer-button" href="interactive-hogwarts-map.html#map">Open live map</a>
           <a class="explorer-button" href="ui/complete-harry-potter-spell-encyclopedia.html">Browse spells</a>
         </div>
       </div>
-      <div class="explorer-panel map-art" id="map" aria-label="Stylized interactive Hogwarts map">
-        <div class="map-pitch" aria-hidden="true"></div>
-        <div class="map-castle" aria-hidden="true"></div>
-        <div class="map-lake" aria-hidden="true"></div>
-        <div class="map-forest" aria-hidden="true"></div>
+      <div class="explorer-panel map-art marauder-map" id="map" aria-label="Animated Hogwarts map with moving footsteps">
+        <div class="map-parchment" aria-hidden="true"></div>
+        <div class="map-fold map-fold-one" aria-hidden="true"></div>
+        <div class="map-fold map-fold-two" aria-hidden="true"></div>
+        <div class="map-path path-one" aria-hidden="true"></div>
+        <div class="map-path path-two" aria-hidden="true"></div>
+        <div class="map-path path-three" aria-hidden="true"></div>
+        <div class="map-path path-four" aria-hidden="true"></div>
+        <div class="map-path path-five" aria-hidden="true"></div>
+        <div class="map-room great-hall-room" aria-hidden="true"><span>Great Hall</span></div>
+        <div class="map-room library-room" aria-hidden="true"><span>Library</span></div>
+        <div class="map-room requirement-room" aria-hidden="true"><span>Room of Requirement</span></div>
+        <div class="map-room forest-room" aria-hidden="true"><span>Forbidden Forest</span></div>
+        <div class="map-room lake-room" aria-hidden="true"><span>Black Lake</span></div>
+        <div class="map-room pitch-room" aria-hidden="true"><span>Quidditch Pitch</span></div>
+        <div class="map-room astronomy-room" aria-hidden="true"><span>Astronomy Tower</span></div>
+        <div class="map-room hospital-room" aria-hidden="true"><span>Hospital Wing</span></div>
+        <div class="map-room owlery-room" aria-hidden="true"><span>Owlery</span></div>
+        <div class="map-room hagrid-room" aria-hidden="true"><span>Hagrid's Hut</span></div>
+        <div class="map-room dungeon-room" aria-hidden="true"><span>Dungeons</span></div>
+        <div class="map-room chamber-room" aria-hidden="true"><span>Chamber</span></div>
+        <div class="map-room gryffindor-room" aria-hidden="true"><span>Gryffindor</span></div>
+        <div class="map-room slytherin-room" aria-hidden="true"><span>Slytherin</span></div>
+        <div class="map-room headmaster-room" aria-hidden="true"><span>Headmaster</span></div>
+        <div class="map-room willow-room" aria-hidden="true"><span>Whomping Willow</span></div>
+        <div class="footstep-trail" data-footstep-trail aria-hidden="true"></div>
         <button class="map-marker active" type="button" data-location="great-hall" aria-label="Show Great Hall details">GH</button>
         <button class="map-marker" type="button" data-location="library" aria-label="Show Hogwarts Library details">LB</button>
         <button class="map-marker" type="button" data-location="room-of-requirement" aria-label="Show Room of Requirement details">RR</button>
         <button class="map-marker" type="button" data-location="forbidden-forest" aria-label="Show Forbidden Forest details">FF</button>
         <button class="map-marker" type="button" data-location="black-lake" aria-label="Show Black Lake details">BL</button>
         <button class="map-marker" type="button" data-location="quidditch-pitch" aria-label="Show Quidditch Pitch details">QP</button>
+        <button class="map-marker" type="button" data-location="astronomy-tower" aria-label="Show Astronomy Tower details">AT</button>
+        <button class="map-marker" type="button" data-location="hospital-wing" aria-label="Show Hospital Wing details">HW</button>
+        <button class="map-marker" type="button" data-location="owlery" aria-label="Show Owlery details">OW</button>
+        <button class="map-marker" type="button" data-location="hagrids-hut" aria-label="Show Hagrid's Hut details">HH</button>
+        <button class="map-marker" type="button" data-location="dungeons" aria-label="Show Dungeons details">DG</button>
+        <button class="map-marker" type="button" data-location="chamber-of-secrets" aria-label="Show Chamber of Secrets details">CS</button>
+        <button class="map-marker" type="button" data-location="gryffindor-common-room" aria-label="Show Gryffindor Common Room details">GR</button>
+        <button class="map-marker" type="button" data-location="slytherin-common-room" aria-label="Show Slytherin Common Room details">SL</button>
+        <button class="map-marker" type="button" data-location="headmasters-office" aria-label="Show Headmaster's Office details">HO</button>
+        <button class="map-marker" type="button" data-location="whomping-willow" aria-label="Show Whomping Willow details">WW</button>
+        <div class="map-live-status" aria-hidden="true"><span></span> Slow footsteps moving across the map</div>
         <div class="map-note">
           <small>Selected location</small>
           <strong data-map-title>The Great Hall</strong>
@@ -55,6 +87,16 @@
         <article class="location-card"><small>Forbidden edge</small><h3>Forbidden Forest</h3><p>The forest is where school safety ends. It carries centaurs, spiders, unicorns, punishment, and finally Harry's walk toward sacrifice.</p></article>
         <article class="location-card"><small>Deep water</small><h3>Black Lake</h3><p>The lake is not decoration. It becomes central during the Triwizard Tournament and reminds visitors that Hogwarts has whole worlds beneath the surface.</p></article>
         <article class="location-card"><small>Public courage</small><h3>Quidditch Pitch</h3><p>Quidditch makes Harry visible as a teammate rather than only a legend. It also gives the series movement, risk, rivalry, and release.</p></article>
+        <article class="location-card"><small>Tower path</small><h3>Astronomy Tower</h3><p>The Astronomy Tower becomes one of the series' most painful high places: a classroom, a lookout, and a place where trust is tested.</p></article>
+        <article class="location-card"><small>Recovery room</small><h3>Hospital Wing</h3><p>The Hospital Wing quietly measures the cost of magical school life. Injuries, curses, accidents, and near escapes often end here.</p></article>
+        <article class="location-card"><small>Message route</small><h3>Owlery</h3><p>The Owlery connects Hogwarts to the outside world. Letters, warnings, comfort, and secrets all pass through its high stone roosts.</p></article>
+        <article class="location-card"><small>Grounds keeper</small><h3>Hagrid's Hut</h3><p>Hagrid's hut is a border place between school rules and wild magic, often where compassion arrives before official permission.</p></article>
+        <article class="location-card"><small>Lower castle</small><h3>Dungeons</h3><p>The dungeons carry Potions lessons, Slytherin atmosphere, and the colder underground mood that follows Harry whenever Snape is near.</p></article>
+        <article class="location-card"><small>Ancient secret</small><h3>Chamber of Secrets</h3><p>The Chamber turns Hogwarts history into a present danger. It exposes prejudice, hidden inheritance, and the first destroyed Horcrux.</p></article>
+        <article class="location-card"><small>House home</small><h3>Gryffindor Common Room</h3><p>The Gryffindor common room is Harry's first real home inside Hogwarts: warm, noisy, imperfect, and full of loyalty.</p></article>
+        <article class="location-card"><small>Lake-level house</small><h3>Slytherin Common Room</h3><p>The Slytherin common room sits beneath the lake in the story's imagination, giving the house a cold, secretive, reflective mood.</p></article>
+        <article class="location-card"><small>Portrait office</small><h3>Headmaster's Office</h3><p>The Headmaster's Office stores memory, authority, portraits, and difficult truths. It is where explanations often arrive too late.</p></article>
+        <article class="location-card"><small>Hidden tunnel</small><h3>Whomping Willow</h3><p>The Whomping Willow guards the tunnel to the Shrieking Shack and becomes tied to Lupin, Sirius, and the Marauders' hidden past.</p></article>
       </div>
     </section>
 
