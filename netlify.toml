@@ -107,3 +107,13 @@
   from = "/complete-harry-potter-spell-encyclopedia.html"
   to = "/ui/complete-harry-potter-spell-encyclopedia.html"
   status = 200
+
+[[redirects]]
+  from = "/archive-search.html"
+  to = "/ui/archive-search.html"
+  status = 200
+
+[[redirects]]
+  from = "/magical-creatures-encyclopedia.html"
+  to = "/ui/magical-creatures-encyclopedia.html"
+  status = 200

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Search the Wizarding Archive across characters, spells, books, Horcruxes, creatures, and Hogwarts locations.">
+  <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/ui/archive-search.html">
+  <title>Archive Search | The Wizarding Archive</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/overrides.css">
+  <link rel="stylesheet" href="css/archive-search.css">
+  <link rel="stylesheet" href="css/tap-fixes.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span><span><small>THE</small> WIZARDING<br>ARCHIVE</span></a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#guides">Guides</a>
+      <a href="ui/characters.html">Characters</a>
+      <a href="ui/magical-creatures-encyclopedia.html">Creatures</a>
+      <a href="ui/complete-harry-potter-spell-encyclopedia.html">Spells</a>
+      <a class="active" href="ui/archive-search.html">Search</a>
+    </nav>
+    <a class="nav-cta" href="ui/magic.html">Play <span>↗</span></a>
+  </header>
+  <main class="search-page">
+    <section class="search-hero">
+      <div>
+        <p class="eyebrow"><span></span> Search the archive</p>
+        <h1>Find any piece of the<br><em>wizarding story</em></h1>
+        <p class="search-intro">Search across characters, spells, books, Horcruxes, creatures, and key Hogwarts locations. The interface is built to feel like a living index now and can later point at backend search without changing the layout.</p>
+      </div>
+      <div class="search-panel">
+        <div class="search-toolbar">
+          <div class="search-field">
+            <input type="search" data-archive-search placeholder="Search Harry Potter characters, spells, books..." aria-label="Search archive">
+            <a class="button button-primary" href="ui/magic.html">Try Play mode <span>→</span></a>
+          </div>
+          <div class="search-filters" aria-label="Archive search categories">
+            <button class="search-filter active" type="button" data-search-category="all">All</button>
+            <button class="search-filter" type="button" data-search-category="characters">Characters</button>
+            <button class="search-filter" type="button" data-search-category="spells">Spells</button>
+            <button class="search-filter" type="button" data-search-category="books">Books</button>
+            <button class="search-filter" type="button" data-search-category="horcruxes">Horcruxes</button>
+            <button class="search-filter" type="button" data-search-category="locations">Locations</button>
+            <button class="search-filter" type="button" data-search-category="creatures">Creatures</button>
+          </div>
+          <div class="sound-strip">
+            <div>
+              <small>Ambient archive</small>
+              <strong>Gentle magic hum</strong>
+            </div>
+            <div class="sound-controls" data-sound-controls>
+              <button type="button" data-audio-toggle>Sound off</button>
+              <input type="range" min="0" max="100" value="35" data-audio-range aria-label="Sound volume">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <p class="search-intro" data-search-count>0 results found</p>
+      <div class="search-results" data-search-results></div>
+      <div class="search-empty" data-search-empty hidden>
+        <strong>No matches yet</strong>
+        Try a character like Hermione, a spell like Expelliarmus, a Horcrux like the locket, or a place like the Great Hall.
+      </div>
+    </section>
+  </main>
+  <script src="js/archive-search-data.js"></script>
+  <script src="js/archive-search.js"></script>
+  <script src="js/page-loader.js"></script>
+</body>
+</html>

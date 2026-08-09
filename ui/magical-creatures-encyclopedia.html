@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore magical creatures from the Harry Potter world with roles, traits, and story meaning.">
+  <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/ui/magical-creatures-encyclopedia.html">
+  <title>Magical Creatures Encyclopedia | The Wizarding Archive</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/overrides.css">
+  <link rel="stylesheet" href="css/archive-search.css">
+  <link rel="stylesheet" href="css/tap-fixes.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span><span><small>THE</small> WIZARDING<br>ARCHIVE</span></a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#guides">Guides</a>
+      <a href="ui/characters.html">Characters</a>
+      <a class="active" href="ui/magical-creatures-encyclopedia.html">Creatures</a>
+      <a href="ui/archive-search.html">Search</a>
+      <a href="ui/magic.html">Play</a>
+    </nav>
+    <a class="nav-cta" href="ui/magic.html">Play <span>↗</span></a>
+  </header>
+  <main class="search-page">
+    <section class="search-hero">
+      <div>
+        <p class="eyebrow"><span></span> Magical bestiary</p>
+        <h1>Magical creatures<br><em>encyclopedia</em></h1>
+        <p class="search-intro">The wizarding world feels alive because it is full of creatures with their own rules, dangers, and loyalties. Some are helpers, some are warnings, and some become part of the story’s turning points.</p>
+      </div>
+      <div class="search-panel">
+        <div class="search-toolbar">
+          <div class="search-field">
+            <input type="search" id="creature-search" placeholder="Search a creature..." aria-label="Search magical creatures">
+            <a class="button button-primary" href="ui/archive-search.html">Open archive search <span>→</span></a>
+          </div>
+          <div class="search-filters" aria-label="Creature categories">
+            <button class="search-filter active" type="button" data-creature-filter="all">All creatures</button>
+            <button class="search-filter" type="button" data-creature-filter="friendly">Helpful</button>
+            <button class="search-filter" type="button" data-creature-filter="dangerous">Dangerous</button>
+            <button class="search-filter" type="button" data-creature-filter="sentient">Sentient</button>
+          </div>
+          <div class="sound-strip">
+            <div>
+              <small>Ambient archive</small>
+              <strong>Creature soundscape</strong>
+            </div>
+            <div class="sound-controls" data-sound-controls>
+              <button type="button" data-audio-toggle>Sound off</button>
+              <input type="range" min="0" max="100" value="35" data-audio-range aria-label="Sound volume">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <p class="search-intro" id="creature-count">0 creatures shown</p>
+      <div class="search-results" id="creature-grid" aria-live="polite"></div>
+      <div class="search-empty" id="creature-empty" hidden>
+        <strong>No creature found</strong>
+        Try searching phoenix, basilisk, thestral, hippogriff, or house-elf.
+      </div>
+    </section>
+  </main>
+  <script>
+    window.magicalCreatures = [
+      {name:'Fawkes',type:'Phoenix',role:'friendly',copy:'Dumbledore’s phoenix who appears when hope, loyalty, and rebirth are needed most.'},
+      {name:'Basilisk',type:'Serpent',role:'dangerous',copy:'A giant serpent whose venom can destroy Horcruxes and whose gaze petrifies or kills.'},
+      {name:'Thestral',type:'Winged horse',role:'sentient',copy:'A horse-like creature visible to those who have seen death and used by Harry’s group to travel.'},
+      {name:'Hippogriff',type:'Hybrid beast',role:'sentient',copy:'A proud magical creature that demands respect before it will allow a rider.'},
+      {name:'Centaur',type:'Forest guardian',role:'sentient',copy:'Intelligent forest dwellers who read the stars and guard their territory carefully.'},
+      {name:'House-elf',type:'Servant magic',role:'friendly',copy:'Powerful household magic tied to service, freedom, and deep loyalty.'},
+      {name:'Acromantula',type:'Giant spider',role:'dangerous',copy:'A dangerous giant spider colony that makes the Forbidden Forest far more threatening.'},
+      {name:'Buckbeak',type:'Magical beast',role:'friendly',copy:'A famous hippogriff whose pride and rescue scenes make him one of the most memorable creatures.'},
+      {name:'Norbert(a)',type:'Dragon',role:'dangerous',copy:'Hagrid’s dragon hatchling shows how quickly magical creatures outgrow ordinary care.'},
+      {name:'Dementor',type:'Dark creature',role:'dangerous',copy:'Soul-draining guards of Azkaban that embody despair and fear.'},
+      {name:'Phoenix',type:'Rebirth creature',role:'friendly',copy:'A symbol of renewal and magical healing, most clearly shown through Fawkes.'},
+      {name:'Grindylow',type:'Water creature',role:'dangerous',copy:'A lake creature that helps define the darker side of the Black Lake.'}
+    ];
+  </script>
+  <script>
+    (function () {
+      const grid = document.getElementById('creature-grid');
+      const search = document.getElementById('creature-search');
+      const count = document.getElementById('creature-count');
+      const empty = document.getElementById('creature-empty');
+      const filters = document.querySelectorAll('[data-creature-filter]');
+      let active = 'all';
+
+      const render = () => {
+        const term = (search.value || '').trim().toLowerCase();
+        const items = (window.magicalCreatures || []).filter((item) => {
+          const matchesFilter = active === 'all' || item.role === active;
+          const haystack = `${item.name} ${item.type} ${item.copy}`.toLowerCase();
+          return matchesFilter && (!term || haystack.includes(term));
+        });
+        count.textContent = `${items.length} creature${items.length === 1 ? '' : 's'} shown`;
+        empty.hidden = items.length > 0;
+        grid.innerHTML = items.map((item) => `
+          <article class="search-card">
+            <small>${item.type}</small>
+            <h3>${item.name}</h3>
+            <p>${item.copy}</p>
+            <span>${item.role}</span>
+          </article>
+        `).join('');
+      };
+
+      search.addEventListener('input', render);
+      filters.forEach((button) => button.addEventListener('click', () => {
+        active = button.dataset.creatureFilter || 'all';
+        filters.forEach((item) => item.classList.toggle('active', item === button));
+        render();
+      }));
+      render();
+    })();
+  </script>
+  <script src="js/archive-search.js"></script>
+  <script src="js/page-loader.js"></script>
+</body>
+</html>
