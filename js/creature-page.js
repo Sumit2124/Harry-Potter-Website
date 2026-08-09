@@ -152,7 +152,7 @@
               </div>
               <div class="sound-controls" data-sound-controls>
                 <button type="button" data-audio-toggle>Sound off</button>
-                <input type="range" min="0" max="100" value="35" data-audio-range aria-label="Sound volume">
+                <input type="range" min="0" max="100" value="80" data-audio-range aria-label="Sound volume">
               </div>
             </div>
             <div class="search-filters" aria-label="Creature highlights">
@@ -200,7 +200,7 @@
   const audioRange = document.querySelector('[data-audio-range]');
   let audioContext = null;
   let audioMaster = null;
-  let audioEnabled = localStorage.getItem('wizardingArchiveAudio') === 'on';
+  let audioEnabled = localStorage.getItem('wizardingArchiveAudio') !== 'off';
 
   const syncAudioUi = () => {
     if (audioToggle) {
@@ -208,7 +208,7 @@
       audioToggle.setAttribute('aria-pressed', String(audioEnabled));
     }
     if (audioRange) {
-      audioRange.value = String(Math.round((Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.45) * 100)));
+      audioRange.value = String(Math.round((Math.max(0.65, Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.8)) * 100)));
     }
   };
 
@@ -218,8 +218,13 @@
     if (!audioContext) {
       audioContext = new AudioContext();
       audioMaster = audioContext.createGain();
-      audioMaster.gain.value = Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.45);
-      audioMaster.connect(audioContext.destination);
+      const audioFilter = audioContext.createBiquadFilter();
+      audioFilter.type = 'lowpass';
+      audioFilter.frequency.value = 2200;
+      audioFilter.Q.value = 0.7;
+      audioMaster.gain.value = Math.max(0.65, Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.8));
+      audioMaster.connect(audioFilter);
+      audioFilter.connect(audioContext.destination);
     }
     if (audioContext.state === 'suspended') {
       await audioContext.resume();
@@ -233,10 +238,11 @@
     if (!ctx || !audioMaster || audioMaster.__playing) return;
     audioMaster.__playing = true;
     const sequence = [
-      [196, 0.06, 'sine', 0],
-      [293.66, 0.045, 'triangle', 150],
-      [392, 0.04, 'sine', 300],
-      [493.88, 0.03, 'triangle', 450]
+      [174.61, 0.07, 'sine', 0],
+      [220, 0.055, 'triangle', 180],
+      [261.63, 0.05, 'sine', 360],
+      [329.63, 0.045, 'triangle', 540],
+      [392, 0.035, 'sine', 720]
     ];
     sequence.forEach(([frequency, gainValue, type, delay]) => {
       const tone = ctx.createOscillator();
@@ -256,18 +262,18 @@
   const playChime = async () => {
     const ctx = await ensureAudio();
     if (!ctx || !audioMaster) return;
-    const tones = [392, 523.25, 659.25];
+    const tones = [261.63, 329.63, 392, 523.25];
     tones.forEach((frequency, index) => {
       const tone = ctx.createOscillator();
       const gain = ctx.createGain();
       tone.type = index === 1 ? 'triangle' : 'sine';
       tone.frequency.value = frequency;
-      gain.gain.value = index === 0 ? 0.09 : 0.06;
+      gain.gain.value = index === 0 ? 0.28 : index === 1 ? 0.2 : 0.16;
       tone.connect(gain).connect(audioMaster);
-      window.setTimeout(() => tone.start(), index * 110);
+      window.setTimeout(() => tone.start(), index * 120);
       window.setTimeout(() => {
         try { tone.stop(); } catch (_) {}
-      }, 780 + index * 110);
+      }, 900 + index * 120);
     });
   };
 
@@ -280,7 +286,7 @@
   });
 
   audioRange?.addEventListener('input', () => {
-    const value = Number(audioRange.value) / 100;
+    const value = Math.max(0.65, Number(audioRange.value) / 100);
     localStorage.setItem('wizardingArchiveAudioVolume', String(value));
     if (audioMaster) audioMaster.gain.value = value;
   });

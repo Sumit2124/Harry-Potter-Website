@@ -46,9 +46,14 @@
       audioMaster.gain.value = masterGain;
       audioReverb = audioContext.createDelay(1.2);
       audioDelay = audioContext.createGain();
-      audioReverb.delayTime.value = 0.18;
-      audioDelay.gain.value = 0.25;
-      audioMaster.connect(audioDelay);
+      const filter = audioContext.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 1800;
+      filter.Q.value = 0.7;
+      audioReverb.delayTime.value = 0.23;
+      audioDelay.gain.value = 0.28;
+      audioMaster.connect(filter);
+      filter.connect(audioDelay);
       audioDelay.connect(audioReverb);
       audioReverb.connect(audioContext.destination);
     }
@@ -63,20 +68,20 @@
     const ctx = await ensureAudio();
     if (!ctx || !audioMaster || audioMaster.__playing) return;
     audioMaster.__playing = true;
-    const notes = [146.83, 220, 293.66, 329.63];
+    const notes = [174.61, 220, 261.63, 329.63, 392];
     notes.forEach((frequency, index) => {
       const oscillator = ctx.createOscillator();
       const gain = ctx.createGain();
-      oscillator.type = index === 0 ? 'sine' : index === 1 ? 'triangle' : 'sine';
+      oscillator.type = index < 2 ? 'sine' : 'triangle';
       oscillator.frequency.value = frequency;
-      gain.gain.value = index === 0 ? 0.07 : 0.035;
+      gain.gain.value = index === 0 ? 0.09 : index === 1 ? 0.06 : 0.04;
       oscillator.connect(gain).connect(audioMaster);
       oscillator.start();
       window.setTimeout(() => {
         try { oscillator.stop(); } catch (_) {}
-      }, 1600 + index * 240);
+      }, 1850 + index * 220);
     });
-    window.setTimeout(() => { audioMaster.__playing = false; }, 2200);
+    window.setTimeout(() => { audioMaster.__playing = false; }, 2400);
   };
 
   const playChime = async () => {
