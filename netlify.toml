@@ -114,8 +114,18 @@
   status = 200
 
 [[redirects]]
+  from = "/ui/magical-creatures-encyclopedia"
+  to = "/ui/magical-creatures-encyclopedia.html"
+  status = 200
+
+[[redirects]]
   from = "/magical-creatures-encyclopedia.html"
   to = "/ui/magical-creatures-encyclopedia.html"
+  status = 200
+
+[[redirects]]
+  from = "/ui/creature"
+  to = "/ui/creature.html"
   status = 200
 
 [[redirects]]
