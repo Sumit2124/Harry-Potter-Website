@@ -12,6 +12,7 @@
   let activeCategory = 'all';
   let audioContext = null;
   let audioMaster = null;
+  let masterGain = 0.35;
   let audioEnabled = localStorage.getItem('wizardingArchiveAudio') === 'on';
 
   const collections = [
@@ -29,7 +30,7 @@
       audioToggle.setAttribute('aria-pressed', String(audioEnabled));
     }
     if (audioRange) {
-      audioRange.value = String(Math.round((Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.35) * 100)));
+      audioRange.value = String(Math.round((Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.45) * 100)));
     }
   };
 
@@ -39,7 +40,8 @@
     if (!audioContext) {
       audioContext = new AudioContext();
       audioMaster = audioContext.createGain();
-      audioMaster.gain.value = Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.35);
+      masterGain = Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.45);
+      audioMaster.gain.value = masterGain;
       audioMaster.connect(audioContext.destination);
     }
     if (audioContext.state === 'suspended') {
@@ -59,7 +61,7 @@
       const gain = ctx.createGain();
       oscillator.type = index === 0 ? 'sine' : 'triangle';
       oscillator.frequency.value = frequency;
-      gain.gain.value = index === 0 ? 0.028 : 0.014;
+      gain.gain.value = index === 0 ? 0.06 : 0.03;
       oscillator.connect(gain).connect(audioMaster);
       oscillator.start();
       window.setTimeout(() => {
@@ -67,6 +69,29 @@
       }, 1800 + index * 220);
     });
     window.setTimeout(() => { audioMaster.__playing = false; }, 1900);
+  };
+
+  const playChime = async () => {
+    const ctx = await ensureAudio();
+    if (!ctx || !audioMaster) return;
+    const toneA = ctx.createOscillator();
+    const toneB = ctx.createOscillator();
+    const gainA = ctx.createGain();
+    const gainB = ctx.createGain();
+    toneA.type = 'sine';
+    toneB.type = 'triangle';
+    toneA.frequency.value = 392;
+    toneB.frequency.value = 523.25;
+    gainA.gain.value = 0.09;
+    gainB.gain.value = 0.05;
+    toneA.connect(gainA).connect(audioMaster);
+    toneB.connect(gainB).connect(audioMaster);
+    toneA.start();
+    window.setTimeout(() => toneB.start(), 120);
+    window.setTimeout(() => {
+      try { toneA.stop(); } catch (_) {}
+      try { toneB.stop(); } catch (_) {}
+    }, 900);
   };
 
   const render = () => {
@@ -117,13 +142,13 @@
     audioEnabled = !audioEnabled;
     localStorage.setItem('wizardingArchiveAudio', audioEnabled ? 'on' : 'off');
     syncAudioUi();
-    if (audioEnabled) {
-      await maybePlayHum();
-    }
+    await playChime();
+    if (audioEnabled) await maybePlayHum();
   });
   audioRange?.addEventListener('input', () => {
     const value = Number(audioRange.value) / 100;
     localStorage.setItem('wizardingArchiveAudioVolume', String(value));
+    masterGain = value;
     if (audioMaster) audioMaster.gain.value = value;
   });
 
