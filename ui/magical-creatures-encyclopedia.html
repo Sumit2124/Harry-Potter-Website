@@ -102,12 +102,12 @@
         count.textContent = `${items.length} creature${items.length === 1 ? '' : 's'} shown`;
         empty.hidden = items.length > 0;
         grid.innerHTML = items.map((item) => `
-          <article class="search-card">
+          <a class="search-card" href="ui/creature.html?creatureId=${item.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}">
             <small>${item.type}</small>
             <h3>${item.name}</h3>
             <p>${item.copy}</p>
-            <span>${item.role}</span>
-          </article>
+            <span>Open explanation ↗</span>
+          </a>
         `).join('');
       };
 
@@ -120,7 +120,6 @@
       render();
     })();
   </script>
-  <script src="js/archive-search.js"></script>
   <script src="js/page-loader.js"></script>
 </body>
 </html>

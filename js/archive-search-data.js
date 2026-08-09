@@ -65,13 +65,13 @@ window.archiveSearchData = {
     ['spell-avada', 'Avada Kedavra', 'Killing curse', 'Causes instant death and cannot be blocked by ordinary shield magic.', 'ui/complete-harry-potter-spell-encyclopedia.html#spell-directory']
   ],
   creatures: [
-    ['creature-hungarian-horntail', 'Hungarian Horntail', 'Dragon', 'A violent dragon used in the Triwizard Tournament and known for its dangerous fire breath.', 'ui/magical-creatures-encyclopedia.html#creature-directory'],
-    ['creature-fawkes', 'Fawkes', 'Phoenix', 'Dumbledore’s phoenix who appears when hope, loyalty, and rebirth are needed most.', 'ui/magical-creatures-encyclopedia.html#creature-directory'],
-    ['creature-basilisk', 'Basilisk', 'Serpent', 'A giant serpent whose venom can destroy Horcruxes and whose gaze petrifies or kills.', 'ui/magical-creatures-encyclopedia.html#creature-directory'],
-    ['creature-thestral', 'Thestral', 'Winged horse', 'A horse-like creature visible to those who have seen death and used by the Order and Harry’s group.', 'ui/magical-creatures-encyclopedia.html#creature-directory'],
-    ['creature-hippogriff', 'Hippogriff', 'Hybrid beast', 'A proud magical creature that requires respect before it will allow a rider.', 'ui/magical-creatures-encyclopedia.html#creature-directory'],
-    ['creature-centaur', 'Centaur', 'Forest guardian', 'Intelligent forest dwellers who read the stars, protect their territory, and judge human interference carefully.', 'ui/magical-creatures-encyclopedia.html#creature-directory'],
-    ['creature-house-elf', 'House-elf', 'Servant magic', 'Powerful household magic tied to service, freedom, and deep loyalty.', 'ui/magical-creatures-encyclopedia.html#creature-directory'],
-    ['creature-acromantula', 'Acromantula', 'Giant spider', 'A dangerous giant spider colony that makes the Forbidden Forest far more threatening.', 'ui/magical-creatures-encyclopedia.html#creature-directory']
+    ['creature-hungarian-horntail', 'Hungarian Horntail', 'Dragon', 'A violent dragon used in the Triwizard Tournament and known for its dangerous fire breath.', 'ui/creature.html?creatureId=hungarian-horntail'],
+    ['creature-fawkes', 'Fawkes', 'Phoenix', 'Dumbledore’s phoenix who appears when hope, loyalty, and rebirth are needed most.', 'ui/creature.html?creatureId=fawkes'],
+    ['creature-basilisk', 'Basilisk', 'Serpent', 'A giant serpent whose venom can destroy Horcruxes and whose gaze petrifies or kills.', 'ui/creature.html?creatureId=basilisk'],
+    ['creature-thestral', 'Thestral', 'Winged horse', 'A horse-like creature visible to those who have seen death and used by the Order and Harry’s group.', 'ui/creature.html?creatureId=thestral'],
+    ['creature-hippogriff', 'Hippogriff', 'Hybrid beast', 'A proud magical creature that requires respect before it will allow a rider.', 'ui/creature.html?creatureId=hippogriff'],
+    ['creature-centaur', 'Centaur', 'Forest guardian', 'Intelligent forest dwellers who read the stars, protect their territory, and judge human interference carefully.', 'ui/creature.html?creatureId=centaur'],
+    ['creature-house-elf', 'House-elf', 'Servant magic', 'Powerful household magic tied to service, freedom, and deep loyalty.', 'ui/creature.html?creatureId=house-elf'],
+    ['creature-acromantula', 'Acromantula', 'Giant spider', 'A dangerous giant spider colony that makes the Forbidden Forest far more threatening.', 'ui/creature.html?creatureId=acromantula']
   ]
 };

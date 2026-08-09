@@ -117,3 +117,8 @@
   from = "/magical-creatures-encyclopedia.html"
   to = "/ui/magical-creatures-encyclopedia.html"
   status = 200
+
+[[redirects]]
+  from = "/creature.html"
+  to = "/ui/creature.html"
+  status = 200

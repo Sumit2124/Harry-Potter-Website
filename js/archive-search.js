@@ -12,7 +12,9 @@
   let activeCategory = 'all';
   let audioContext = null;
   let audioMaster = null;
-  let masterGain = 0.35;
+  let audioReverb = null;
+  let audioDelay = null;
+  let masterGain = 0.45;
   let audioEnabled = localStorage.getItem('wizardingArchiveAudio') === 'on';
 
   const collections = [
@@ -42,7 +44,13 @@
       audioMaster = audioContext.createGain();
       masterGain = Number(localStorage.getItem('wizardingArchiveAudioVolume') || 0.45);
       audioMaster.gain.value = masterGain;
-      audioMaster.connect(audioContext.destination);
+      audioReverb = audioContext.createDelay(1.2);
+      audioDelay = audioContext.createGain();
+      audioReverb.delayTime.value = 0.18;
+      audioDelay.gain.value = 0.25;
+      audioMaster.connect(audioDelay);
+      audioDelay.connect(audioReverb);
+      audioReverb.connect(audioContext.destination);
     }
     if (audioContext.state === 'suspended') {
       await audioContext.resume();
@@ -55,43 +63,41 @@
     const ctx = await ensureAudio();
     if (!ctx || !audioMaster || audioMaster.__playing) return;
     audioMaster.__playing = true;
-    const notes = [110, 164, 220];
+    const notes = [146.83, 220, 293.66, 329.63];
     notes.forEach((frequency, index) => {
       const oscillator = ctx.createOscillator();
       const gain = ctx.createGain();
-      oscillator.type = index === 0 ? 'sine' : 'triangle';
+      oscillator.type = index === 0 ? 'sine' : index === 1 ? 'triangle' : 'sine';
       oscillator.frequency.value = frequency;
-      gain.gain.value = index === 0 ? 0.06 : 0.03;
+      gain.gain.value = index === 0 ? 0.07 : 0.035;
       oscillator.connect(gain).connect(audioMaster);
       oscillator.start();
       window.setTimeout(() => {
         try { oscillator.stop(); } catch (_) {}
-      }, 1800 + index * 220);
+      }, 1600 + index * 240);
     });
-    window.setTimeout(() => { audioMaster.__playing = false; }, 1900);
+    window.setTimeout(() => { audioMaster.__playing = false; }, 2200);
   };
 
   const playChime = async () => {
     const ctx = await ensureAudio();
     if (!ctx || !audioMaster) return;
-    const toneA = ctx.createOscillator();
-    const toneB = ctx.createOscillator();
-    const gainA = ctx.createGain();
-    const gainB = ctx.createGain();
-    toneA.type = 'sine';
-    toneB.type = 'triangle';
-    toneA.frequency.value = 392;
-    toneB.frequency.value = 523.25;
-    gainA.gain.value = 0.09;
-    gainB.gain.value = 0.05;
-    toneA.connect(gainA).connect(audioMaster);
-    toneB.connect(gainB).connect(audioMaster);
-    toneA.start();
-    window.setTimeout(() => toneB.start(), 120);
+    const notes = [392, 523.25, 659.25];
+    notes.forEach((frequency, index) => {
+      const tone = ctx.createOscillator();
+      const gain = ctx.createGain();
+      tone.type = index === 1 ? 'triangle' : 'sine';
+      tone.frequency.value = frequency;
+      gain.gain.value = index === 0 ? 0.09 : 0.06;
+      tone.connect(gain).connect(audioMaster);
+      window.setTimeout(() => tone.start(), index * 110);
+      window.setTimeout(() => {
+        try { tone.stop(); } catch (_) {}
+      }, 780 + index * 110);
+    });
     window.setTimeout(() => {
-      try { toneA.stop(); } catch (_) {}
-      try { toneB.stop(); } catch (_) {}
-    }, 900);
+      if (audioReverb) audioReverb.delayTime.value = 0.22;
+    }, 200);
   };
 
   const render = () => {
