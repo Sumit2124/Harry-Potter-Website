@@ -156,14 +156,18 @@
               </div>
             </div>
             <div class="search-filters" aria-label="Creature highlights">
-              <button class="search-filter active" type="button">Overview</button>
-              <button class="search-filter" type="button">Story role</button>
-              <button class="search-filter" type="button">Creature facts</button>
+              <button class="search-filter active" type="button" data-creature-tab="overview">Overview</button>
+              <button class="search-filter" type="button" data-creature-tab="story">Story role</button>
+              <button class="search-filter" type="button" data-creature-tab="facts">Creature facts</button>
             </div>
           </div>
         </div>
       </section>
       <section>
+        <div class="search-empty" data-creature-panel>
+          <strong>Overview</strong>
+          ${item.intro}
+        </div>
         <div class="search-results">
           ${item.sections.map((section) => `
             <article class="search-card">
@@ -198,6 +202,8 @@
 
   const audioToggle = document.querySelector('[data-audio-toggle]');
   const audioRange = document.querySelector('[data-audio-range]');
+  const tabButtons = document.querySelectorAll('[data-creature-tab]');
+  const creaturePanel = document.querySelector('[data-creature-panel]');
   let audioContext = null;
   let audioMaster = null;
   let audioEnabled = localStorage.getItem('wizardingArchiveAudio') !== 'off';
@@ -259,6 +265,23 @@
     window.setTimeout(() => { audioMaster.__playing = false; }, 1600);
   };
 
+  const creatureTabCopy = {
+    overview: `<strong>Overview</strong>${item.intro}`,
+    story: `<strong>Story role</strong>${item.sections[1][1]}`,
+    facts: `<strong>Creature facts</strong>${item.sections[0][1]}`
+  };
+
+  const setCreatureTab = (tab) => {
+    if (!creaturePanel) return;
+    const safeTab = creatureTabCopy[tab] ? tab : 'overview';
+    tabButtons.forEach((button) => button.classList.toggle('active', button.dataset.creatureTab === safeTab));
+    creaturePanel.innerHTML = creatureTabCopy[safeTab];
+  };
+
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => setCreatureTab(button.dataset.creatureTab || 'overview'));
+  });
+
   const playChime = async () => {
     const ctx = await ensureAudio();
     if (!ctx || !audioMaster) return;
@@ -317,6 +340,7 @@
     }, true);
   }
 
+  setCreatureTab('overview');
   syncAudioUi();
   if (audioEnabled) playCreatureTheme();
 
