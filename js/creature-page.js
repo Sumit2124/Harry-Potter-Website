@@ -10,7 +10,7 @@
         ['Why it matters', 'It pushes Harry into one of the saga’s most memorable moments of improvisation, courage, and reflexes.'],
         ['Where it appears', 'Most clearly in the Goblet of Fire era, where it becomes the emblem of wizarding competition that has gone too far.']
       ],
-      related: ['ui/harry-potter-movie-order.html', 'ui/harry-potter-character-guide.html', 'ui/magical-creatures-encyclopedia.html']
+      related: ['harry-potter-movie-order.html', 'harry-potter-character-guide.html', 'magical-creatures-encyclopedia.html']
     },
     'fawkes': {
       name: 'Fawkes',
@@ -22,7 +22,7 @@
         ['Why it matters', 'Fawkes saves Harry in the Chamber of Secrets and turns magical wonder into something emotionally transformative.'],
         ['Where it appears', 'Hogwarts, Dumbledore’s office, and key moments where hope needs a visible sign.']
       ],
-      related: ['ui/harry-potter-ending-explained.html', 'ui/harry-potter-patronus-list.html', 'ui/magical-creatures-encyclopedia.html']
+      related: ['harry-potter-ending-explained.html', 'harry-potter-patronus-list.html', 'magical-creatures-encyclopedia.html']
     },
     'basilisk': {
       name: 'Basilisk',
@@ -34,7 +34,7 @@
         ['Why it matters', 'It links the school mystery to Tom Riddle’s diary and gives the Chamber of Secrets its terrifying shape.'],
         ['Where it appears', 'Beneath Hogwarts, inside the Chamber, and in the clues that Hermione uncovers while investigating the attacks.']
       ],
-      related: ['ui/harry-potter-horcruxes-explained.html', 'ui/harry-potter-character-guide.html', 'ui/magical-creatures-encyclopedia.html']
+      related: ['harry-potter-horcruxes-explained.html', 'harry-potter-character-guide.html', 'magical-creatures-encyclopedia.html']
     },
     'thestral': {
       name: 'Thestral',
@@ -46,7 +46,7 @@
         ['Why it matters', 'It gives the story one of its most haunting ideas: perception changes after loss.'],
         ['Where it appears', 'Used as transportation by Harry’s group and associated with the Ministry battle and later travel.']
       ],
-      related: ['ui/harry-potter-timeline.html', 'ui/harry-potter-ending-explained.html', 'ui/magical-creatures-encyclopedia.html']
+      related: ['harry-potter-timeline.html', 'harry-potter-ending-explained.html', 'magical-creatures-encyclopedia.html']
     },
     'hippogriff': {
       name: 'Hippogriff',
@@ -58,7 +58,7 @@
         ['Why it matters', 'It teaches that magical creatures are not props; they are beings with dignity and expectations.'],
         ['Where it appears', 'Most famously through Buckbeak in Prisoner of Azkaban and the wider Hogwarts care of magical creatures world.']
       ],
-      related: ['ui/harry-potter-character-guide.html', 'ui/harry-potter-timeline.html', 'ui/magical-creatures-encyclopedia.html']
+      related: ['harry-potter-character-guide.html', 'harry-potter-timeline.html', 'magical-creatures-encyclopedia.html']
     },
     'centaur': {
       name: 'Centaur',
@@ -70,7 +70,7 @@
         ['Why it matters', 'Centaur scenes deepen the sense that the wizarding world is older than Hogwarts and indifferent to human assumptions.'],
         ['Where it appears', 'The Forbidden Forest, especially in encounters involving prophecy, punishment, and danger.']
       ],
-      related: ['ui/interactive-hogwarts-map.html', 'ui/harry-potter-character-guide.html', 'ui/magical-creatures-encyclopedia.html']
+      related: ['interactive-hogwarts-map.html', 'harry-potter-character-guide.html', 'magical-creatures-encyclopedia.html']
     },
     'house-elf': {
       name: 'House-elf',
@@ -82,7 +82,7 @@
         ['Why it matters', 'Dobby, Kreacher, and other house-elves reveal how the story treats loyalty, kindness, and choice.'],
         ['Where it appears', 'Throughout Hogwarts, Malfoy Manor, the Burrow, and many of the story’s most emotional rescues.']
       ],
-      related: ['ui/harry-potter-character-guide.html', 'ui/harry-potter-ending-explained.html', 'ui/magical-creatures-encyclopedia.html']
+      related: ['harry-potter-character-guide.html', 'harry-potter-ending-explained.html', 'magical-creatures-encyclopedia.html']
     },
     'acromantula': {
       name: 'Acromantula',
@@ -94,7 +94,7 @@
         ['Why it matters', 'It makes the Forbidden Forest feel like a place where school rules stop and survival begins.'],
         ['Where it appears', 'The Forbidden Forest and Hagrid-adjacent creature stories that blur care, comedy, and risk.']
       ],
-      related: ['ui/interactive-hogwarts-map.html', 'ui/harry-potter-books-in-order.html', 'ui/magical-creatures-encyclopedia.html']
+      related: ['interactive-hogwarts-map.html', 'harry-potter-books-in-order.html', 'magical-creatures-encyclopedia.html']
     }
   };
 
@@ -103,7 +103,7 @@
   document.title = `${item.name} | The Wizarding Archive`;
 
   const canonicalLink = document.querySelector('link[rel="canonical"]') || document.head.appendChild(Object.assign(document.createElement('link'), { rel: 'canonical' }));
-  const canonicalUrl = new URL('ui/creature.html', document.baseURI);
+  const canonicalUrl = new URL('creature.html', document.baseURI);
   canonicalUrl.searchParams.set('creatureId', key);
   canonicalLink.href = canonicalUrl.href;
 
@@ -130,11 +130,11 @@
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="ui/archive-search.html">Search</a>
-        <a class="active" href="ui/magical-creatures-encyclopedia.html">Creatures</a>
-        <a href="ui/harry-potter-character-guide.html">Character guide</a>
-        <a href="ui/harry-potter-horcruxes-explained.html">Horcruxes</a>
+        <a class="active" href="magical-creatures-encyclopedia.html">Creatures</a>
+        <a href="harry-potter-character-guide.html">Character guide</a>
+        <a href="harry-potter-horcruxes-explained.html">Horcruxes</a>
       </nav>
-      <a class="nav-cta" href="ui/magic.html">Play <span>↗</span></a>
+      <a class="nav-cta" href="magic.html">Play <span>↗</span></a>
     </header>
     <main class="search-page">
       <section class="search-hero">
@@ -179,7 +179,7 @@
         <div class="quick-grid">
           <article class="quick-card"><small>Role</small><h3>${item.role}</h3><p>${item.sections[1][1]}</p></article>
           <article class="quick-card"><small>Best reading path</small><h3>Where to start</h3><p>${item.sections[2][1]}</p></article>
-          <a class="quick-card" href="ui/magical-creatures-encyclopedia.html"><small>Back to directory</small><h3>Creature encyclopedia</h3><p>Return to the full bestiary and continue exploring other magical creatures.</p></a>
+          <a class="quick-card" href="magical-creatures-encyclopedia.html"><small>Back to directory</small><h3>Creature encyclopedia</h3><p>Return to the full bestiary and continue exploring other magical creatures.</p></a>
         </div>
       </section>
       <section class="explorer-section" style="border-bottom:0">
@@ -191,7 +191,7 @@
           }).join('')}
         </div>
       </section>
-      <a class="guide-back" href="ui/magical-creatures-encyclopedia.html">← Back to creatures directory</a>
+      <a class="guide-back" href="magical-creatures-encyclopedia.html">← Back to creatures directory</a>
     </main>
     <footer class="site-footer section-shell"><span>✦ The Wizarding Archive</span><span>Made for the magic we carry with us.</span><span>© 2026 · Unofficial fan project</span></footer>
   `;
@@ -319,4 +319,9 @@
 
   syncAudioUi();
   if (audioEnabled) playCreatureTheme();
+
+  const style = document.createElement('link');
+  style.rel = 'stylesheet';
+  style.href = 'css/archive-explorers.css';
+  document.head.append(style);
 })();
