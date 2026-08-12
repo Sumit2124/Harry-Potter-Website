@@ -59,6 +59,11 @@
   status = 200
 
 [[redirects]]
+  from = "/harry-potter-hogwarts-locations-explained.html"
+  to = "/ui/harry-potter-hogwarts-locations-explained.html"
+  status = 200
+
+[[redirects]]
   from = "/harry-potter-horcruxes-explained.html"
   to = "/ui/harry-potter-horcruxes-explained.html"
   status = 200
