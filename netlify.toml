@@ -3,6 +3,142 @@
 
 # Keep the deployed public URLs stable while the source HTML lives in ui/.
 # Query strings such as ?bookId=2 and ?horcruxId=1 are preserved automatically.
+# Consolidate direct source-file visits onto the canonical public guide URLs.
+[[redirects]]
+  from = "/ui/harry-potter-books-in-order.html"
+  to = "/harry-potter-books-in-order.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-character-guide.html"
+  to = "/harry-potter-character-guide.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-deathly-hallows-explained.html"
+  to = "/harry-potter-deathly-hallows-explained.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-ending-explained.html"
+  to = "/harry-potter-ending-explained.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-hogwarts-houses-explained.html"
+  to = "/harry-potter-hogwarts-houses-explained.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-hogwarts-locations-explained.html"
+  to = "/harry-potter-hogwarts-locations-explained.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-horcruxes-explained.html"
+  to = "/harry-potter-horcruxes-explained.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-movie-order.html"
+  to = "/harry-potter-movie-order.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-patronus-list.html"
+  to = "/harry-potter-patronus-list.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-spells-and-meanings.html"
+  to = "/harry-potter-spells-and-meanings.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-spells-explained.html"
+  to = "/harry-potter-spells-explained.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-timeline.html"
+  to = "/harry-potter-timeline.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-wands-explained.html"
+  to = "/harry-potter-wands-explained.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/interactive-hogwarts-map.html"
+  to = "/interactive-hogwarts-map.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/live-hogwarts-map.html"
+  to = "/live-hogwarts-map.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/complete-harry-potter-spell-encyclopedia.html"
+  to = "/complete-harry-potter-spell-encyclopedia.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/characters.html"
+  to = "/characters.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/magic.html"
+  to = "/magic.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/gryffindor-house.html"
+  to = "/gryffindor-house.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/hufflepuff-house.html"
+  to = "/hufflepuff-house.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/ravenclaw-house.html"
+  to = "/ravenclaw-house.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/slytherin-house.html"
+  to = "/slytherin-house.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-character-harry-potter.html"
+  to = "/harry-potter-character-harry-potter.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-character-hermione-granger.html"
+  to = "/harry-potter-character-hermione-granger.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-character-ron-weasley.html"
+  to = "/harry-potter-character-ron-weasley.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/harry-potter-on-screen-return.html"
+  to = "/harry-potter-on-screen-return.html"
+  status = 301
+
+[[redirects]]
+  from = "/ui/wizarding-wallpapers.html"
+  to = "/wizarding-wallpapers.html"
+  status = 301
+
 [[redirects]]
   from = "/book.html"
   to = "/ui/book.html"
@@ -61,6 +197,51 @@
 [[redirects]]
   from = "/harry-potter-hogwarts-locations-explained.html"
   to = "/ui/harry-potter-hogwarts-locations-explained.html"
+  status = 200
+
+[[redirects]]
+  from = "/gryffindor-house.html"
+  to = "/ui/gryffindor-house.html"
+  status = 200
+
+[[redirects]]
+  from = "/hufflepuff-house.html"
+  to = "/ui/hufflepuff-house.html"
+  status = 200
+
+[[redirects]]
+  from = "/ravenclaw-house.html"
+  to = "/ui/ravenclaw-house.html"
+  status = 200
+
+[[redirects]]
+  from = "/slytherin-house.html"
+  to = "/ui/slytherin-house.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-character-harry-potter.html"
+  to = "/ui/harry-potter-character-harry-potter.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-character-hermione-granger.html"
+  to = "/ui/harry-potter-character-hermione-granger.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-character-ron-weasley.html"
+  to = "/ui/harry-potter-character-ron-weasley.html"
+  status = 200
+
+[[redirects]]
+  from = "/harry-potter-on-screen-return.html"
+  to = "/ui/harry-potter-on-screen-return.html"
+  status = 200
+
+[[redirects]]
+  from = "/wizarding-wallpapers.html"
+  to = "/ui/wizarding-wallpapers.html"
   status = 200
 
 [[redirects]]
