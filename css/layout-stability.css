@@ -1,0 +1,79 @@
+/* Homepage layout safeguards for long content and responsive cards. */
+.weekly-ritual-card {
+  grid-template-columns: minmax(0, 1fr) minmax(0, .7fr);
+}
+
+.weekly-ritual-card > * {
+  min-width: 0;
+}
+
+.weekly-ritual-card h2 {
+  overflow-wrap: anywhere;
+}
+
+/* Keep the transition from the plot section to films intentional, not empty. */
+.storyline {
+  padding: 70px 0 50px;
+}
+
+.films {
+  padding-top: 50px;
+}
+
+/* The detail footer must flow below the action instead of overlapping it. */
+.film-detail {
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+  padding-bottom: 40px;
+}
+
+.film-detail .detail-footer {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.film-detail .view-more {
+  align-self: flex-start;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 800px) {
+  .weekly-ritual-card {
+    grid-template-columns: 1fr;
+  }
+
+  .storyline {
+    padding: 70px 0 45px;
+  }
+
+  .films {
+    padding-top: 45px;
+  }
+
+  .film-detail {
+    min-height: 0;
+    padding-bottom: 32px;
+  }
+
+  .film-detail .view-more {
+    margin-top: 24px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .film-detail {
+    padding: 28px;
+  }
+
+  .film-detail .view-more {
+    width: 100%;
+    margin-top: 22px;
+    margin-bottom: 25px;
+  }
+}

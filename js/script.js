@@ -26,13 +26,17 @@ document.querySelector('.lightbox-close').addEventListener('click',closeLightbox
 const menuToggle = document.querySelector('.menu-toggle'); const nav = document.querySelector('.main-nav');
 menuToggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',open)});
 const closeMenu=()=>{nav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false')};
+const moreMenu=document.querySelector('.nav-more'); const moreSummary=moreMenu?.querySelector('summary');
+const closeMore=()=>{if(!moreMenu)return;moreMenu.open=false;moreSummary?.setAttribute('aria-expanded','false')};
+if(moreMenu&&moreSummary){moreSummary.setAttribute('aria-expanded','false');moreMenu.addEventListener('toggle',()=>moreSummary.setAttribute('aria-expanded',String(moreMenu.open)));}
 document.querySelectorAll('.main-nav a').forEach(link=>link.addEventListener('click',closeMenu));
-document.addEventListener('pointerdown',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()},true);
-document.addEventListener('click',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()},true);
-document.addEventListener('touchstart',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()},true);
-document.addEventListener('focusin',event=>{if(!nav.classList.contains('open'))return;const target=event.target;if(menuToggle.contains(target)||target.closest('.main-nav a'))return;closeMenu()},true);
-window.addEventListener('scroll',closeMenu,{passive:true});
-window.addEventListener('resize',()=>{if(window.innerWidth>800)closeMenu()});
+document.querySelectorAll('.nav-more a').forEach(link=>link.addEventListener('click',closeMore));
+const closeNavigationFromOutside=event=>{const target=event.target;if(nav.classList.contains('open')&&!menuToggle.contains(target)&&!target.closest('.main-nav'))closeMenu();if(moreMenu?.open&&!moreMenu.contains(target))closeMore()};
+document.addEventListener('pointerdown',closeNavigationFromOutside,true);
+document.addEventListener('focusin',closeNavigationFromOutside,true);
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMenu();closeMore();}});
+window.addEventListener('scroll',()=>{closeMenu();closeMore()},{passive:true});
+window.addEventListener('resize',()=>{if(window.innerWidth>800)closeMenu();closeMore()});
 
 const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.12}); document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.addEventListener('mousemove',e=>{const glow=document.querySelector('.cursor-glow');glow.style.left=`${e.clientX}px`;glow.style.top=`${e.clientY}px`});
