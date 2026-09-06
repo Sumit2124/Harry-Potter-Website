@@ -3,6 +3,67 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, .7fr);
 }
 
+.gallery-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .88;
+  transition: transform .7s cubic-bezier(.2,.75,.2,1), filter .5s ease;
+}
+
+.gallery-card:hover .gallery-image {
+  transform: scale(1.055);
+  filter: saturate(1.12);
+}
+
+.gallery-card:after {
+  z-index: 1;
+}
+
+.gallery-card .gallery-icon,
+.gallery-card .gallery-label {
+  z-index: 2;
+}
+
+.wallpaper-home-link {
+  display: block;
+  margin-top: 14px;
+  color: var(--gold-bright);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.wallpaper-home-link span {
+  font-size: 17px;
+}
+
+.wallpaper-home-share {
+  margin-top: 16px;
+}
+
+.about-note {
+  color: #8992a8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.about-actions .button {
+  margin-top: 0;
+}
+
 .weekly-ritual-card > * {
   min-width: 0;
 }

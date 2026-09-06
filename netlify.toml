@@ -140,6 +140,11 @@
   status = 301
 
 [[redirects]]
+  from = "/ui/about-the-archive.html"
+  to = "/about-the-archive.html"
+  status = 301
+
+[[redirects]]
   from = "/book.html"
   to = "/ui/book.html"
   status = 200
@@ -307,6 +312,11 @@
 [[redirects]]
   from = "/magical-creatures-encyclopedia.html"
   to = "/ui/magical-creatures-encyclopedia.html"
+  status = 200
+
+[[redirects]]
+  from = "/about-the-archive.html"
+  to = "/ui/about-the-archive.html"
   status = 200
 
 [[redirects]]

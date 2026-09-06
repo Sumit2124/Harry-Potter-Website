@@ -9,7 +9,12 @@
   <meta property="og:description" content="Explore Harry Potter stories, characters, Horcruxes, spells, wallpapers, quizzes, and weekly magical challenges." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://wizarding-archive-sumit.netlify.app/" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://wizarding-archive-sumit.netlify.app/assets/images/wallpapers/moonlit-castle-lake.png" />
+  <meta property="og:image:alt" content="Original AI-created moonlit castle wallpaper from The Wizarding Archive" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Wizarding Archive | Harry Potter Fan Archive" />
+  <meta name="twitter:description" content="Explore Harry Potter stories, characters, spells, wallpapers, quizzes, and magical guides." />
+  <meta name="twitter:image" content="https://wizarding-archive-sumit.netlify.app/assets/images/wallpapers/moonlit-castle-lake.png" />
   <meta name="google-site-verification" content="qjCIiViIxVGbB8GV6f3VrQEfzcEbsuLypyEmRlaexQU" />
   <title>The Wizarding Archive | Harry Potter</title>
   <link rel="canonical" href="https://wizarding-archive-sumit.netlify.app/" />
@@ -48,6 +53,7 @@
           <a href="ui/archive-search.html">Search</a>
           <a href="ui/magical-creatures-encyclopedia.html">Creatures</a>
           <a href="ui/wizarding-wallpapers.html">Download wallpapers</a>
+          <a href="ui/about-the-archive.html">About the archive</a>
           <a href="#guides">Guides</a>
         </div>
       </details>
@@ -113,12 +119,12 @@
 
     <section class="wallpapers section-shell" id="wallpapers">
       <div class="section-kicker"><span>03</span><span class="line"></span><span>THE GALLERY</span></div>
-      <div class="section-heading split-heading reveal"><div><p class="eyebrow"><span></span> Moving pictures</p><h2>Scenes worth<br /><em>remembering.</em></h2></div><p class="heading-note">A collection of atmospheric moments, imagined in midnight blue and candlelight gold.</p></div>
+      <div class="section-heading split-heading reveal"><div><p class="eyebrow"><span></span> Moving pictures</p><h2>Scenes worth<br /><em>remembering.</em></h2></div><div class="heading-note"><p>A collection of original AI-created atmospheric moments, imagined in midnight blue and candlelight gold.</p><a class="wallpaper-home-link" href="ui/wizarding-wallpapers.html">Browse all 10 downloadable wallpapers <span>↗</span></a><button class="button button-ghost wallpaper-home-share" type="button" data-share="Explore ten original AI-created wizarding wallpapers from The Wizarding Archive.">Share the gallery <span>↗</span></button></div></div>
       <div class="gallery-grid reveal delay-1">
-        <button class="gallery-card gallery-castle" data-title="The castle awaits"><span class="gallery-icon">✦</span><span class="gallery-label">The castle awaits <small>01 / 04</small></span></button>
-        <button class="gallery-card gallery-forest" data-title="Into the Forbidden Forest"><span class="gallery-icon">✧</span><span class="gallery-label">Into the forbidden forest <small>02 / 04</small></span></button>
-        <button class="gallery-card gallery-map" data-title="Mischief managed"><span class="gallery-icon">⌁</span><span class="gallery-label">Mischief managed <small>03 / 04</small></span></button>
-        <button class="gallery-card gallery-hall" data-title="The Great Hall"><span class="gallery-icon">✦</span><span class="gallery-label">The great hall <small>04 / 04</small></span></button>
+        <button class="gallery-card gallery-castle" data-title="The castle awaits" aria-label="Open the moonlit castle wallpaper"><img class="gallery-image" src="assets/images/wallpapers/previews/moonlit-castle-lake.jpg" alt="Original AI-created moonlit castle wallpaper beside a dark lake" loading="lazy"><span class="gallery-icon">✦</span><span class="gallery-label">The castle awaits <small>01 / 04</small></span></button>
+        <button class="gallery-card gallery-forest" data-title="Into the Forbidden Forest" aria-label="Open the Forbidden Forest wallpaper"><img class="gallery-image" src="assets/images/wallpapers/previews/forbidden-forest-moonlight.jpg" alt="Original AI-created moonlit Forbidden Forest wallpaper" loading="lazy"><span class="gallery-icon">✧</span><span class="gallery-label">Into the forbidden forest <small>02 / 04</small></span></button>
+        <button class="gallery-card gallery-map" data-title="The Black Lake at dusk" aria-label="Open the Black Lake wallpaper"><img class="gallery-image" src="assets/images/wallpapers/previews/black-lake-dusk.jpg" alt="Original AI-created Black Lake wallpaper at magical dusk" loading="lazy"><span class="gallery-icon">⌁</span><span class="gallery-label">The black lake at dusk <small>03 / 04</small></span></button>
+        <button class="gallery-card gallery-hall" data-title="The candlelit Great Hall" aria-label="Open the Great Hall wallpaper"><img class="gallery-image" src="assets/images/wallpapers/previews/candlelit-great-hall.jpg" alt="Original AI-created candlelit Great Hall wallpaper" loading="lazy"><span class="gallery-icon">✦</span><span class="gallery-label">The candlelit great hall <small>04 / 04</small></span></button>
       </div>
     </section>
 
@@ -170,7 +176,7 @@
       <div class="weekly-ritual-card reveal"><div><p class="eyebrow"><span></span> A living archive</p><h2 id="ritual-title">A reason to return<br /><em>every week.</em></h2><p id="ritual-copy">Every week brings a new character focus, a hidden spell prompt, and a Friday wallpaper reveal.</p><div class="ritual-note"><span>Hidden prompt</span><strong id="ritual-spell">A new magical clue appears here.</strong></div></div><div class="ritual-actions"><p id="weekly-date">New wallpaper every Friday</p><a class="button button-primary" id="ritual-action" href="ui/magic.html">Open this week’s magic <span>→</span></a><button class="button button-ghost" type="button" data-share="Visit The Wizarding Archive for this week’s character focus and magical challenge.">Share this week <span>↗</span></button></div></div>
     </section>
 
-    <section class="about section-shell" id="about"><div class="about-card reveal"><div><p class="eyebrow"><span></span> About this archive</p><h2>Made with a little<br /><em>magic and code.</em></h2></div><div class="about-copy"><p>This is a fan-made project created to celebrate the world, characters, and lessons of Harry Potter. It is a quiet place to return to whenever you need a little more wonder.</p><div class="contact-line"><span>Created by</span><strong>Sumit Thapliyal</strong></div><div class="contact-line"><span>Find me on GitHub</span><a href="https://github.com/Sumit2124" target="_blank" rel="noreferrer">@Sumit2124 ↗</a></div><button class="button button-ghost about-share" type="button" data-share="Explore The Wizarding Archive, a fan-made Harry Potter archive of stories, characters, guides, and magical challenges.">Share the archive <span>↗</span></button></div></div></section>
+    <section class="about section-shell" id="about"><div class="about-card reveal"><div><p class="eyebrow"><span></span> About this archive</p><h2>Made with a little<br /><em>magic and code.</em></h2></div><div class="about-copy"><p>This is an unofficial, fan-made Harry Potter archive created by Sumit Thapliyal. It brings together original explanations, interactive experiments, AI-created atmospheric artwork, and carefully organised paths through the books, films, characters, spells, creatures, and locations.</p><p class="about-note">The archive is an independent fan project and is not affiliated with or endorsed by J.K. Rowling, Warner Bros., or any official Harry Potter organisation. Story facts are presented as fan reference material; artwork in the wallpaper gallery is created for this project.</p><div class="contact-line"><span>Created by</span><strong>Sumit Thapliyal</strong></div><div class="contact-line"><span>Find me on GitHub</span><a href="https://github.com/Sumit2124" target="_blank" rel="noreferrer">@Sumit2124 ↗</a></div><div class="about-actions"><a class="button button-ghost" href="ui/about-the-archive.html">Read about the project <span>↗</span></a><button class="button button-ghost about-share" type="button" data-share="Explore The Wizarding Archive, an unofficial fan-made Harry Potter archive created by Sumit Thapliyal.">Share the archive <span>↗</span></button></div></div></div></section>
   </main>
 
   <footer class="site-footer section-shell"><span>✦ The Wizarding Archive</span><span>Made for the magic we carry with us.</span><span>© 2026 · Unofficial fan project</span></footer>

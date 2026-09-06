@@ -18,8 +18,10 @@ const guideLinks = {
 };
 const key = location.pathname.split('/').pop() || 'harry-potter-horcruxes-explained.html';
 const related = guideLinks[key] || guideLinks['harry-potter-horcruxes-explained.html'];
+const archiveExtras = [['Wallpaper collection', 'ui/wizarding-wallpapers.html', 'Download original AI-created scenes for your desktop, tablet, or phone.'], ['About the archive', 'ui/about-the-archive.html', 'Learn who created this unofficial archive and how the project is organised.']];
+const relatedWithExtras = [...related.slice(0, 2), ...archiveExtras];
 if (page) {
-  page.insertAdjacentHTML('beforeend', `<section class="guide-related" aria-labelledby="related-title"><p class="eyebrow"><span></span> Keep exploring</p><h2 id="related-title">A few more pages<br><em>for your next chapter.</em></h2><div class="related-grid">${related.map(([title, href, copy]) => `<a class="related-card" href="${href}"><small>Archive path</small><strong>${title}</strong><span>${copy}</span><b>Open guide ↗</b></a>`).join('')}</div></section><div class="guide-actions"><button class="guide-share" type="button" data-share="${document.title}">Share this guide ↗</button><a class="guide-back" href="index.html#guides">← Back to archive guides</a></div>`);
+  page.insertAdjacentHTML('beforeend', `<section class="guide-related" aria-labelledby="related-title"><p class="eyebrow"><span></span> Keep exploring</p><h2 id="related-title">A few more pages<br><em>for your next chapter.</em></h2><div class="related-grid">${relatedWithExtras.map(([title, href, copy]) => `<a class="related-card" href="${href}"><small>Archive path</small><strong>${title}</strong><span>${copy}</span><b>Open guide ↗</b></a>`).join('')}</div></section><div class="guide-actions"><button class="guide-share" type="button" data-share="${document.title}">Share this guide ↗</button><a class="guide-back" href="index.html#guides">← Back to archive guides</a></div>`);
 }
 const share = document.createElement('script'); share.src = 'js/share.js'; document.head.append(share);
 const wand = document.createElement('script'); wand.src = 'js/wand.js'; document.head.append(wand);
